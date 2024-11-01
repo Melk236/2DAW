@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronometro</title>
+</head>
+
+<body>
+    <p id="crono"></p>
+    <script>
+        function crono() {
+            var fecha = new Date();
+            var tiempoH, hora, minuto, segundo, t;
+
+
+
+            if (fecha.getHours() < 12) {
+                tiempoH = 'am';
+            }
+            else {
+                tiempoH = 'pm';
+            }
+            if (fecha.getHours() < 10) {
+                hora = '0' + fecha.getHours();
+            }
+            else {
+                hora = fecha.getHours();
+
+            }
+
+            if (fecha.getMinutes() < 10) {
+                minuto = '0' + fecha.getMinutes();
+            }
+
+            else {
+
+                minuto = fecha.getMinutes();
+
+            }
+
+            if (fecha.getSeconds() < 10) {
+                segundo = '0' + fecha.getSeconds();
+            }
+
+            else {
+
+                segundo = fecha.getSeconds();
+            }
+
+
+            t = hora + ':' + minuto + ':' + segundo;
+
+            document.getElementById('crono').innerHTML = t;
+        }
+        setInterval(crono, 1000);
+
+    </script>
+</body>
+
+</html>
