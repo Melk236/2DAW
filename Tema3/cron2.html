@@ -7,20 +7,29 @@
 </head>
 <body>
     <h1 id="cron"></h1>
+    <button type="button" id="iniciar">Iniciar</button>
+    <button type="button" id="parar">Parar</button>
 
     <script>
          
+         var mifecha=new Date();//Se crea el objeto fecha
+         mifecha.setMinutes(1);//Iniciamos los minutos de nuestro contador en 1
+         mifecha.setSeconds(0);//Y los segundos en cero
+         var minuto,segundo;
 
-       
+         minuto=mifecha.getMinutes();
+         segundo=mifecha.getSeconds();
+         
+        crono();
 
         function crono(){
-       
-            var mifecha=new Date();
-        var minuto,segundo,hora;
-        mifecha.setMinutes(1);
-        mifecha.setSeconds(0);
+           
+            
+        var hora;
+        
 
         if(mifecha.getMinutes()<1){
+            console.log(mifecha.getMinutes());
             minuto='00';
         }
         else{
@@ -32,7 +41,7 @@
             segundo='0'+mifecha.getSeconds();
         }
         else{
-            segundo+mifecha.getSeconds();
+            segundo=mifecha.getSeconds();
         }
         hora=minuto+':'+segundo;
         document.getElementById('cron').innerHTML=hora;
@@ -42,8 +51,15 @@
 
             mifecha.getSeconds(59);
         }
+        document.getElementById('parar').addEventListener('click',function(){
+        clearInterval(parar);
+        });
+        
+
     }
-        setInterval(crono,1000);
+    document.getElementById('iniciar').addEventListener('click',function(){
+        var parar=setInterval(crono,1000);
+        }); 
     </script>
 </body>
 </html>
