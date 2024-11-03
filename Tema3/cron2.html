@@ -15,7 +15,7 @@
          var mifecha=new Date();//Se crea el objeto fecha
          mifecha.setMinutes(1);//Iniciamos los minutos de nuestro contador en 1
          mifecha.setSeconds(0);//Y los segundos en cero
-         var minuto,segundo;
+         var minuto,segundo,parar;
 
          minuto=mifecha.getMinutes();
          segundo=mifecha.getSeconds();
@@ -28,9 +28,9 @@
         var hora;
         
 
-        if(mifecha.getMinutes()<1){
-            console.log(mifecha.getMinutes());
-            minuto='00';
+        if(mifecha.getMinutes()<10){
+
+            minuto='0'+mifecha.getMinutes();
         }
         else{
             minuto='0'+mifecha.getMinutes();
@@ -46,20 +46,33 @@
         hora=minuto+':'+segundo;
         document.getElementById('cron').innerHTML=hora;
 
-        mifecha.setSeconds(mifecha.getSeconds()-1);
-        if(mifecha.getSeconds()==0){
+       
+       
+        if(mifecha.getSeconds()==0&&mifecha.getMinutes()==0){
 
-            mifecha.getSeconds(59);
+            clearInterval(parar);
+            
         }
+        else{
+            mifecha.setSeconds(mifecha.getSeconds()-1);//Voy quitandole cada vez un segundo
+        }
+       
+         
+       
+        
         document.getElementById('parar').addEventListener('click',function(){
-        clearInterval(parar);
+        clearInterval(parar);//Para parar el cronometro utilizando eventos
+            parar=null;
         });
         
-
-    }
-    document.getElementById('iniciar').addEventListener('click',function(){
-        var parar=setInterval(crono,1000);
+        document.getElementById('iniciar').addEventListener('click',function(){
+        if(parar==null){
+        parar=setInterval(crono,1000);//Para inicar el cronometro cada segundo
+        }  
         }); 
+    }
+   
     </script>
 </body>
+
 </html>
