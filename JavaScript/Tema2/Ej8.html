@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fecha</h1>
+    <p id="fecha">2004/03/15</p>
+    <script>
+        function fechas(){
+            var f=document.getElementById('fecha').innerHTML;
+            var año,mes;
+           var fech=new Date(f);
+            
+           año=fech.getFullYear();
+           mes=fech.getMonth()+1;
+
+           document.write('El año de la fecha es '+año+' y el mes es '+mes);
+            
+        }
+        fechas();
+
+    </script>
+</body>
+</html>
