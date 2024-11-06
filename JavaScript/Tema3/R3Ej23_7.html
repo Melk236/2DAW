@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let cad,cad2='';
+        cad=prompt('Introduzca una palabra');
+
+        for(let i=0;i<cad.length;i++){
+            if(cad.charAt(i)==' '){
+               cad2+='<br>';
+            }
+            else{
+                cad2+=cad.charAt(i);
+            }
+        }
+        document.write(cad2);
+
+    </script>
+</body>
+</html>

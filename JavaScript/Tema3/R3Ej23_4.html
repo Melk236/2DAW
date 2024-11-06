@@ -7,10 +7,24 @@
 </head>
 <body>
     <script>
-        let cad;
-        
+        let cad='La sed sera mares de sal';
+        let cad2='',cad3='';
+        cad=cad.toLowerCase();
 
-
+        for(let i=cad.length-1, j=0;i>=0,j<cad.length;i--,j++){
+            if(cad.charAt(i)!=' '){
+                cad2+=cad.charAt(i);
+            }
+            if(cad.charAt(j)!=' '){
+                cad3+=cad.charAt(j);
+            }
+        }
+        if(cad2==cad3){
+            document.write('Las dos palabras son palíndromas');
+        }
+        else{
+            document.write('No son palindromas ');
+        }
     </script>
 </body>
 </html>
