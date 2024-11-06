@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fuente,clave;
+
+        fuente=prompt('Introduzca una frase');
+        clave=prompt('Introduzca la clave a buscar en la frase');
+
+        if(fuente.includes(clave)){
+            document.write('La clave se encuentra en la posición '+(fuente.indexOf(clave)+1))
+        }
+        else{
+            document.write('La palabra no se encuentra en la frase');
+        }
+    </script>
+</body>
+</html>

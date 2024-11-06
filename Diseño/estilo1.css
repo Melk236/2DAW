@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'Fuente';
+    src: url('HALLOWEEN.ttf');
+   
+   
+}
+@font-face {
+    font-family: 'Fuente2';
+    src: url('Miguel\ De\ Northern.ttf');
+}
+body{
+   background-image: url('haloween.png');
+     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+   margin:0; 
+    
+   
+}
+
+h4{
+   
+  font-size: 30px;
+  border: solid;
+  border-color: white;
+  background-color: black;
+  padding: 9px;
+  
+  
+}
+h4:hover{
+    
+    transform: translateY(10px) scale(1.4); 
+    transition: transform 0.3s ease; 
+    background-color: #FF7518;
+    border-color: #434343 ;
+    border-radius: 5px;
+    color: #434343;
+    font-family: 'Fuente';
+    
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+h1,h3,p,h4{
+    font-family:'Fuente2';
+  text-align: center;
+  margin: auto;
+  color: white;
+  
+}
+h1{
+    font-size: 60px;
+
+}
+h3{
+    font-size: 40px;
+}
+
+
+
+.margen{
+
+    margin-top: 250px;
+   
+}
+article{
+    position:relative;
+}
+button{
+  position:absolute;
+  top:120px;
+  left:200px;
+    font-family: 'Fuente2';
+    border-radius: 10px;
+    font-size: 29px;
+   
+    padding: 15px;
+    background-color: #1E90FF;
+    color: #FFFFFF;
+   
+}
+button:hover{
+    font-family: 'Fuente';
+    border-radius: 10px;
+    font-size: 25px;
+    background-color: #FF7518;
+    transform: translateY(10px) scale(1.4); /* Cambié el valor para una reducción ligera */
+    transition: transform 0.3s ease; 
+    padding: 9px;
+    color:#434343;
+
+}
+footer{
+   
+    font-size: 30px;
+    background:linear-gradient(to right, #434343 0%, black 100%);   
+     
+}
+
+hr{
+    border: none;
+    height: 6px;
+    background-color:white;
+}
+
+#linea{
+width: 250px;
+}
+#logoAbajo{
+   margin-left: 38px;
+   padding-bottom: 10px;
+}
+section{
+    padding-bottom:100px;
+}
+
+.logo:hover{
+    transform: translateY(10px) scale(0.9); /* Cambié el valor para una reducción ligera */
+    transition: transform 0.3s ease;
+
+}
+a{
+    
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a id='enlace' href="https://myfpschool.com/"></a>
+    <p id="random"></p>
+    <script>
+      let n;
+      let fecha=new Date();
+      n=Math.random()*1;
+      if(n<0.5){
+        document.getElementById('enlace').innerHTML='Myfpschool.com';
+      }  
+      else if(fecha.getHours()<15){
+        document.getElementById('random').innerHTML='Buenos dias';
+      }
+      else{
+        document.getElementById('random').innerHTML='Buenas tardes';
+      }
+    </script>
+</body>
+</html>

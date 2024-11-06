@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n,n2,producto,op;
+
+        do{
+        n=prompt('Introduzca un numero menor de 57');
+        n=Number(n);
+
+        n2=prompt('Introduzca otro numero menor de 57');
+        n2=Number(n2);
+
+        if(n>=57 || n2>=57){
+            alert('Los numeros son mayores de 57');
+
+        }
+        if(n<0 || n2<0){
+            alert('Los numeros son negativos');
+        }
+     
+        producto=n*n2;
+        alert('El producto de los dos numeros son '+producto);
+        if(producto>57){
+            alert('El producto es mayor de 57');
+        }
+
+        op=prompt('¿Quiere volver a aempezar? S/N');
+    }while(op='S');
+
+    </script>
+</body>
+</html>

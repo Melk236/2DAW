@@ -1,0 +1,35 @@
+body{
+border: solid;
+border-color: rgb(110, 110, 11);
+
+
+}
+.con1{
+display: flex;
+
+
+
+}
+.con1>div{
+
+    border: solid;
+    width: 100%;
+}
+.con2{
+    display: flex;
+}
+.con2>div{
+    border: solid;
+    width: 100%;
+}
+.con3{
+    display: flex;
+}
+.con3>div{
+    border: solid;
+    width: 100%;
+}
+.con4{
+    display: flex;
+    justify-content: center;
+}
