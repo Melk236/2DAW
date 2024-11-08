@@ -32,13 +32,19 @@ h4{
     font-size: 30px;
     padding: 8px;
     border-radius: 10px;
-
 }
+
 h4:hover{
     transition: 0.5s ease;
     transform:translateY(8px);
     color: #F39C12;
 }
+
 .form{
     width: 450px;
+    margin-right: 200px;
+}
+
+.foto{
+    margin-left: 250px;
 }
