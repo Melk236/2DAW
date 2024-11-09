@@ -4,23 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cronometro</title>
+    <link rel="stylesheet" href="stylecroon.css">
 </head>
 <body>
+    
+    <div class="cont">
+    <label for="minut">Introduzca los minutos del contador</label>
+    <input id="minut" type="text">
+    <button id="bot1" type="button" onclick="def()">Enviar</button>
+    <div class="botones">
+        <button  type="button" id="iniciar">Iniciar</button>
+        <button  type="button" id="parar">Parar</button>
+    </div>
     <h1 id="cron"></h1>
-    <button type="button" id="iniciar">Iniciar</button>
-    <button type="button" id="parar">Parar</button>
-
+</div>
     <script>
-         
-         var mifecha=new Date();//Se crea el objeto fecha
-         mifecha.setMinutes(1);//Iniciamos los minutos de nuestro contador en 1
+        var minuto,segundo,parar;
+        var mifecha=new Date();//Se crea el objeto fecha
+        function def(){
+          var minuto,segundo,parar;
+          minuto=document.getElementById('minut').value;
+          
+        
+         mifecha.setMinutes(minuto);//Iniciamos los minutos de nuestro contador en 1
          mifecha.setSeconds(0);//Y los segundos en cero
-         var minuto,segundo,parar;
+        
 
          minuto=mifecha.getMinutes();
          segundo=mifecha.getSeconds();
-         
-        crono();
+         crono();
+       
+        }
+       
 
         function crono(){
            
