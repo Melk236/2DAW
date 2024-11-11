@@ -1,21 +1,15 @@
-@font-face {
-    font-family: 'Fuente';
-    src: url('HALLOWEEN.ttf');
-   
-   
-}
+
 @font-face {
     font-family: 'Fuente2';
     src: url('Miguel\ De\ Northern.ttf');
 }
 body{
-   background-image: url('haloween.png');
+   background-image: url('rojo.jpg');
      background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    
-   margin:0; 
+    margin:0; 
     
    
 }
@@ -31,26 +25,24 @@ h4{
   
 }
 h4:hover{
-    
-    transform: translateY(10px) scale(1.4); 
-    transition: transform 0.3s ease; 
-    background-color: #FF7518;
-    border-color: #434343 ;
-    border-radius: 5px;
-    color: #434343;
-    font-family: 'Fuente';
-    
+    transition: 0.5s ease;
+    transform:translateY(8px);
+
 }
 a{
     text-decoration: none;
     color: inherit;
 }
-h1,h3,p,h4{
+h1,h3,p{
     font-family:'Fuente2';
   text-align: center;
   margin: auto;
   color: white;
   
+}
+header h4{
+    font-family:'Fuente2';
+    color:white;
 }
 h1{
     font-size: 60px;
@@ -84,15 +76,17 @@ button{
    
 }
 button:hover{
-    font-family: 'Fuente';
+  
     border-radius: 10px;
     font-size: 25px;
-    background-color: #FF7518;
-    transform: translateY(10px) scale(1.4); /* Cambié el valor para una reducción ligera */
+      transform: translateY(10px) scale(1.4); 
     transition: transform 0.3s ease; 
     padding: 9px;
-    color:#434343;
+    color:white;
 
+}
+footer h4{
+    font-family: 'Courier New', Courier, monospace;
 }
 footer{
    
@@ -110,6 +104,7 @@ hr{
 #linea{
 width: 250px;
 }
+
 #logoAbajo{
    margin-left: 38px;
    padding-bottom: 10px;
@@ -119,7 +114,7 @@ section{
 }
 
 .logo:hover{
-    transform: translateY(10px) scale(0.9); /* Cambié el valor para una reducción ligera */
+    transform: translateY(10px) scale(0.9); 
     transition: transform 0.3s ease;
 
 }
