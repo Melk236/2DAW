@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <button onclick="abrir()">Abrir</button>
+
+    </form>
+    <script>
+    let n;
+        function abrir(){
+    n=Math.floor(Math.random()*3);
+    
+    if(n==0){
+        window.open('https://hotmail.com');
+    }
+
+    else if(n==1){
+        window.open('https://gmail.com');
+    }
+
+    else{
+
+        window.open('https://yahoo.com');
+    }
+
+}
+
+    </script>
+</body>
+</html>
