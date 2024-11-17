@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <button type="button" onclick="abrir()">Abrir</button>
+
+    </form>
+    <script>
+        function abrir(){
+            let ancho=window.innerWidth;
+            let altura=window.innerHeight/2;
+            
+            
+
+            window.open('','',`width=${ancho},height=${altura}`);
+
+        }
+
+
+    </script>
+</body>
+</html>
