@@ -3,18 +3,21 @@
     src: url('Miguel De Northern.ttf');
 }
 body{
+    background-color: #FFE53B;
+    background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+    
 
-    background-image: url('morocco.png');
-    background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
+margin:0;  
+
+    color: white;
+           
     
 }
 section{
     border: solid;
     border-radius:20px;
     padding: 25px;
+    
     
 }
 
@@ -45,17 +48,16 @@ h4:hover{
 }
 
 .form{
-    width: 450px;
-    margin-right: 200px;
+  
+    
+    
+    margin-right: 50px;
+    
 }
 
 .foto{
-    margin-left: 250px;
-}
-.navbar{
-    background-image: url('rojo.jpg');
-     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    height: 490px;
+    width: 450px;
+    margin-left: 60px;
+   
 }
