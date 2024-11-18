@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const v = [];
+        const v2 = [];
+        const v3 = [];
+        let j = 0, k = 0;
+
+        document.write('Array 1: ');
+        for (let i = 0; i < 10; i++) {
+
+            v[i] = Math.floor(Math.random() * 500) + 1;
+
+            if (v[i] < 250) {
+
+                v2[j] = v[i];
+                j++;
+            }
+            else {
+                v3[k] = v[i];
+                k++;
+            }
+
+            document.write(v[i] + ' ');
+        }
+
+        document.write('<br>Array 2: ');
+
+        for (let i = 0; i < v2.length; i++) {
+
+            document.write(v2[i] + '     ');
+
+
+        }
+
+        document.write('<br>Array 3: ');
+
+        for (let i = 0; i < v3.length; i++) {
+
+            document.write(v3[i] + '     ');
+
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

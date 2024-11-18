@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const array=[];
+        let pos,cantidad=1;
+
+        for(let i=0;i<1000;i++){
+            array[i]=0;
+           
+        }
+
+        for(let i=0;i<10;i++){
+            pos=Math.floor(Math.random()*1000)+1;
+            array[pos]=1000*cantidad;
+            cantidad++;
+        }
+        
+       for(let i=0;i<array.length;i++){
+        if(array[i]>0){
+            document.write('La posicicion ganadora es '+i+':'+array[i]+'<br>');
+        }
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const array=[];
+        let ultimo,penultimo,suma;
+        for(let i=0;i<5;i++){
+            array[i]=Math.floor(Math.random()*1000)+1;
+        }
+        
+        ultimo=array.pop();
+
+        penultimo=array.pop();
+        suma=ultimo+penultimo;
+        document.write('El tamanño del array es '+array.length+'<br>La suma de los dos utimos elementos es '+suma);
+        
+
+    </script>
+</body>
+</html>
