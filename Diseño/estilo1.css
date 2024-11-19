@@ -105,11 +105,7 @@ footer{
      
 }
 
-hr{
-    border: none;
-    height: 6px;
-    background-color:white;
-}
+
 
 #linea{
 width: 250px;
@@ -145,19 +141,45 @@ a{
     gap:50px;
     text-align: center; 
     flex-wrap: wrap;  
+    
 }
 .card1{
     width: 400px;
     border-bottom: 1px solid #ddd;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
-    padding: 0;
-    margin: 0;
-    padding-bottom: 150px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    padding-bottom: 50px;
     
 }
-.card1 h5{
+.cards h5{
     margin-top: 25px;
+    font-family: 'Georgia';
+}
+.cards p{
+    text-align: left;
+    margin-left: 10px;
+font-family: 'Lora';
+}
+.cards a{
+    width: 120px;
+    height: 40px;
+    margin-top: 50px;
+    transition: all 0.3s ease; /* Transición suave */
+    
+}
+.cards a:hover{
+    transform: scale(1.2);
+}
+.card1:hover{
+    transform: scale(1.1);
+}
+.card2:hover{
+    transform: scale(1.1);
+}
+.card3:hover{
+    transform: scale(1.1);
 }
 
 .card2{
@@ -165,19 +187,26 @@ a{
     border-bottom: 1px solid #ddd;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
-    padding: 0;
-    margin: 0;
-    padding-bottom: 150px;
+    border-radius: 8px;  
+    padding-bottom: 50px;
+    transition: all 0.3s ease;
 }
+
 .card3{
     width: 400px;
     border-bottom: 1px solid #ddd;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
-    padding: 0;
-    margin: 0;
-    padding-bottom: 150px;
+    border-radius: 8px;
+    padding-bottom: 50px;
+    transition: all 0.3s ease;
 }
+
+
+.cards img{
+    width: 100%;
+}
+
 img{
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;

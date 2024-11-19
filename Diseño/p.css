@@ -1,14 +1,26 @@
-.card {
-    border: 1px solid #ddd;
-    transition: transform 0.3s, box-shadow 0.3s;
+/* Estilo general del section */
+.content-section {
+    padding: 20px; /* Espaciado interno */
+    background-color: #f9f9f9; /* Fondo claro para destacar la sección */
+    border-radius: 10px; /* Bordes redondeados */
+    max-width: 800px; /* Tamaño máximo para centrar contenido */
+    margin: 0 auto; /* Centrar en la página */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Cada parte dentro del section */
+.section-part {
+    padding: 20px; /* Espaciado interno */
+    margin-bottom: 20px; /* Separación entre partes */
+    background-color: white; /* Fondo blanco para contraste */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
-.card-img-top {
-    height: 200px;
-    object-fit: cover;
+/* Líneas divisorias */
+.divider {
+    border: none; /* Elimina el estilo predeterminado del <hr> */
+    border-top: 2px solid #ccc; /* Línea superior personalizada */
+    margin: 20px 0; /* Espaciado alrededor de la línea */
+    width: 100%; /* Asegura que ocupe todo el ancho */
 }
