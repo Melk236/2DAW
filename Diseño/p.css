@@ -1,49 +1,14 @@
-#video-destacado {
-    background-color: #f5f3e9; /* Fondo sepia claro */
-    padding: 20px;
-    text-align: center;
-    margin: 20px auto;
-    border: 2px solid #a67b5b; /* Borde sepia */
-    border-radius: 8px;
-    max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.card {
+    border: 1px solid #ddd;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-#video-destacado h2 {
-    font-size: 2em;
-    color: #5b4636; /* Texto sepia oscuro */
-    margin-bottom: 15px;
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.video-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.video-container video {
-    width: 100%;
-    max-width: 700px;
-    border-radius: 8px;
-    border: 1px solid #d3c3a3;
-}
-
-.video-description {
-    background-color: #eae0c8; /* Fondo para el texto */
-    padding: 10px 15px;
-    border-radius: 5px;
-    border: 1px solid #d3c3a3;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.video-description h3 {
-    font-size: 1.5em;
-    color: #5b4636;
-    margin-bottom: 10px;
-}
-
-.video-description p {
-    font-size: 1em;
-    color: #5b4636;
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
 }
