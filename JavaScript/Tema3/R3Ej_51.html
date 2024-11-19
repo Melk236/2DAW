@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const array = [];
+        let n, aux;
+
+        for (let i = 0; i < 10; i++) {
+
+            n = Math.floor(Math.random() * 10) + 1;
+            array[i] = n;
+
+
+        }
+
+        for (let i = 0; i < 10; i++) {
+
+            if (array[i] == 2) {
+                aux = array[i];
+                array[i] = array[array.length - 1];
+                array[array.length - 1] = aux;
+                array.pop();
+                array.push(1,1);
+                
+
+            }
+
+        }
+        document.write(array.toString());
+
+    </script>
+</body>
+
+</html>
