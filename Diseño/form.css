@@ -3,8 +3,8 @@
     src: url('Miguel De Northern.ttf');
 }
 body{
-    background-color: #FFE53B;
-    background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+    background: #f1f1f1;
+    background: linear-gradient(135deg, #f7e8c0, #d6bfa7);
     
 
 margin:0;  
@@ -20,9 +20,35 @@ section{
     
     
 }
+p{
+    padding-top: 20px;
+    text-align: center;
+    color: #5b4636;
+}
+span{
+    
+    font-weight: bold;
+}
+h2{
+    color: #5b4636;
+    font-family: 'Playfair Display';
+    font-weight: bold;
+}
+label{
+    font-size: 14px;
+    color: #5b4636;
+    font-weight: bold;
+}
+input,select{
+    border-color: #d6bfa7 !important;
+    border-width: 2px !important;
+    color: #5b4636;
 
-label,select,h4,h2{
+}
+select,h4{
     font-family: 'Fuente';
+    
+
     
 }
 .nav{
@@ -49,7 +75,7 @@ h4:hover{
 
 .form{
   
-    
+    background: rgba(255, 255, 255, 0.9);
     
     margin-right: 50px;
     
@@ -60,4 +86,8 @@ h4:hover{
     width: 450px;
     margin-left: 60px;
    
+}
+button{
+    background-color: #5b4636 !important;
+    color: white !important;
 }

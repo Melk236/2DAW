@@ -1,26 +1,103 @@
-/* Estilo general del section */
-.content-section {
-    padding: 20px; /* Espaciado interno */
-    background-color: #f9f9f9; /* Fondo claro para destacar la sección */
-    border-radius: 10px; /* Bordes redondeados */
-    max-width: 800px; /* Tamaño máximo para centrar contenido */
-    margin: 0 auto; /* Centrar en la página */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f7e8c0, #d6bfa7);
 }
 
-/* Cada parte dentro del section */
-.section-part {
-    padding: 20px; /* Espaciado interno */
-    margin-bottom: 20px; /* Separación entre partes */
-    background-color: white; /* Fondo blanco para contraste */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+/* Contenedor principal */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
 }
 
-/* Líneas divisorias */
-.divider {
-    border: none; /* Elimina el estilo predeterminado del <hr> */
-    border-top: 2px solid #ccc; /* Línea superior personalizada */
-    margin: 20px 0; /* Espaciado alrededor de la línea */
-    width: 100%; /* Asegura que ocupe todo el ancho */
+/* Estilos del formulario */
+.login-box {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Título */
+.login-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #5b4636;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Contenedor de los inputs */
+.input-container {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Etiquetas de los inputs */
+.input-container label {
+    font-size: 14px;
+    color: #5b4636;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Estilos de los inputs */
+.input-container input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #d6bfa7;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* Efecto hover sobre los inputs */
+.input-container input:focus {
+    border-color: #5b4636;
+    box-shadow: 0 0 5px rgba(91, 70, 54, 0.5);
+}
+
+/* Botón de inicio de sesión */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background: #5b4636;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Efecto hover sobre el botón */
+.btn-submit:hover {
+    background: #3e2d1b;
+}
+
+/* Pie de página */
+.footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #5b4636;
+}
+
+.footer a {
+    color: #5b4636;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }

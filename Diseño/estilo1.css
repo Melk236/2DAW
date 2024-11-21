@@ -4,7 +4,7 @@
     src: url('Miguel\ De\ Northern.ttf');
 }
 body{
-    
+   
     margin:0;    
    
 }
@@ -130,6 +130,31 @@ a{
 .palabras{
     padding-bottom: 100px;
 }
+.title-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px auto;
+   margin-bottom: -50px;
+   background: linear-gradient(90deg, #e9dcc9, #a3876a);
+
+    border-radius: 15px;
+    padding: 25px;
+    color:  #5b4636;
+    font-weight: bold;
+    font-family: 'Playfair Display';
+    max-width: 800px;
+    width: 90%;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    
+}
+.title-section:hover{
+    transform: scale(1.05);
+   
+
+}
 .cards{
     
     display: flex;
@@ -155,24 +180,30 @@ a{
     
 }
 .cards h5{
+    font-size: 20px;
     margin-top: 25px;
     font-family: 'Lato';
+    font-weight: bold;
 }
 .cards p{
     text-align: left;
+    line-height: 1.5;
     margin-left: 10px;
     font-family: 'Nunito';
 }
 .cards a{
     background-color: #5b4636;
+    color: white;
     width: 120px;
     height: 40px;
     margin-top: 50px;
-    transition: all 0.3s ease; /* Transición suave */
-    
+    transition: all 0.3s ease; 
 }
 .cards a:hover{
     transform: scale(1.2);
+    background-color: #5b4636;
+    color: white;
+
 }
 .card1:hover{
     transform: scale(1.1);
