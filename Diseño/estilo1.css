@@ -10,7 +10,7 @@ body{
 }
 header{
 
-    background: linear-gradient(to bottom, #2F4F4F, #FFFFFF); /* Transición de gris oscuro a blanco */
+    background: linear-gradient(to bottom, #2F4F4F, #FFFFFF); 
     
 }
 header h4{
@@ -52,6 +52,15 @@ section{
     background-color: #eae0c8;
     margin-top: 1px;
     padding: 25px;
+    /*Los atributos del texto son:line-height que es la separacion vertical
+    que tendran los parrafos,text-align la alineacion del texto en la pantalla,text-decoration 
+    una serie de decoración que se le puede attribuir al texto y el text-indent que 
+    indica la sangría que va a tener el texto */
+    line-height: 19px;
+    text-align: center;
+    text-decoration:dotted;
+    text-indent: 20px;
+
 }
 
 section h2{
@@ -59,7 +68,7 @@ section h2{
     margin-top: 100px;
     font-family:'Fuente2' ;
 }
-h4{
+h4{/*Cuando se hayan visitado vuelven a su color y estilo predeterminado */
    
   font-size: 30px;
   border: solid;
@@ -79,7 +88,8 @@ a{
     color: inherit;
 }
 
-h1,h3,p{
+h1,h3,p{/*En este apartado se ve el atributo font-family que nos permite que
+    el codigo tenga la fuente que queramos*/
     font-family:'Fuente2';
   text-align: center;
   margin: auto;
@@ -87,7 +97,7 @@ h1,h3,p{
   
 }
 
-h1{
+h1{/*Con el font-size le indicamos a las etiquetas que tamaño tendrá el texto*/
     font-size: 60px;
 
 }
@@ -100,7 +110,7 @@ footer h4{
 }
 footer{
    margin-top: 100px;
-    font-size: 30px;
+    font-size:30px;
     background: linear-gradient(to top, #2F4F4F, #FFFFFF);
      
 }
@@ -140,9 +150,16 @@ a{
 
     border-radius: 15px;
     padding: 25px;
-    color:  #5b4636;
+    color:  #5b4636;/*Aqui le indicamos 
+        con font-family el tipo de fuente que vamos a utilizar,Font size el
+         tamaño de la fuente,font weight que establece el peso que va a tener
+         la fuente y font style con el que podemos estilizar el tipo de fuente
+         que tenemos y el tributo font que recoge todas las caracteristicas de 
+         fuente en un atributo
+    */
     font-weight: bold;
     font-family: 'Playfair Display';
+    font-style: normal;
     max-width: 800px;
     width: 90%;
     letter-spacing: 1px;

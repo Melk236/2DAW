@@ -2,15 +2,20 @@
     font-family: 'Fuente';
     src: url('Miguel De Northern.ttf');
 }
-body{
+body{/* Uso del background para añadir color a l fondo, en este caso es un
+    color degradado,que incluye una imagen haciendo que esta tenga un grado de 
+    opacidad y el uso del float haciendo que la imagen  quede a la izquirda*/
     background: #f1f1f1;
-    background: linear-gradient(135deg, #f7e8c0, #d6bfa7);
     
-
-margin:0;  
-
-    color: white;
-           
+    background: linear-gradient(rgba(116, 100, 100, 0.5), rgba(109, 93, 93, 0.5)),
+    url('fondo.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+    margin:0; 
+    color: white;       
     
 }
 section{
@@ -18,7 +23,7 @@ section{
     border-radius:20px;
     padding: 25px;
     
-    
+    width: 100%;
 }
 p{
     padding-top: 20px;
@@ -45,7 +50,7 @@ input,select{
     color: #5b4636;
 
 }
-select,h4{
+select,li{
     font-family: 'Fuente';
     
 
@@ -59,15 +64,18 @@ a{
     text-decoration: none;
     color: inherit;
 }
-h4{
+li{/*Una lista ul, en el sistema de navegacion del header*/
    
     border: solid;
     font-size: 30px;
     padding: 8px;
     border-radius: 10px;
+    list-style: none;
 }
 
-h4:hover{
+li:hover{/*Al pasar el raton sobre los enlaces estos realizan una animacion 
+    ademas cambiar a un color anaranjado
+    */
     transition: 0.5s ease;
     transform:translateY(8px);
     color: #F39C12;
