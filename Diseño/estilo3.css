@@ -4,11 +4,32 @@
 }
 body{
     margin: 0;
-    display: grid;
-    justify-content: center;
-    align-items: center; 
-    min-height: 100vh; 
-    background: linear-gradient(to right, #434343 0%, black 100%);
+    background: linear-gradient(135deg, #f7e8c0, #d6bfa7);
+     font-family: 'Fuente';
+    
+    
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+li{/*Una lista ul, en el sistema de navegacion del header*/
+   
+    border: solid;
+    font-size: 30px;
+    padding: 8px;
+    border-radius: 10px;
+    list-style: none;
+    color: white;
+}
+
+li:hover{/*Al pasar el raton sobre los enlaces estos realizan una animacion 
+    ademas cambiar a un color anaranjado
+    */
+    transition: 0.5s ease;
+    transform:translateY(8px);
+    color: #F39C12;
 }
 section{
 
@@ -19,14 +40,25 @@ section{
 
 
 }
-h1{
-    font-family: 'Fuente';
-    text-align: center;
-    color: white;
+table{/*Una tabla con los maximos goleadores de la historia 
+    sin doble borde*/
+    border-collapse: collapse;
+    margin-top: 50px;
+    
+    
+   
 }
-p{
-    font-family:'Fuente';
-    text-align:left;
-    color: rgb(255, 255, 255);
-  
+th,td{
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-color: #5b4636;
+}
+th{
+    text-align: center;
+    border-color: black;
+}
+td{
+    text-align: left;
+    padding: 8px;
+    border-color: black;
+    
 }
