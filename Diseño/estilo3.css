@@ -5,6 +5,8 @@
 body{
     margin: 0;
     background: linear-gradient(135deg, #f7e8c0, #d6bfa7);
+    background-size: cover;
+   
      font-family: 'Fuente';
     
     
@@ -48,7 +50,7 @@ table{/*Una tabla con los maximos goleadores de la historia
     
    
 }
-th,td{
+th,td{/*El color del borde y de fondo de las celdas*/
     background: rgba(255, 255, 255, 0.9) !important;
     border-color: #5b4636;
 }
