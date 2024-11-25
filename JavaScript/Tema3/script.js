@@ -45,12 +45,15 @@ function probabilidad(){
             if(i=0){
                 pocker++;
             }
+            else{
+                trio++;
+            }
         }
         else if(i<100){
-            i=String(i);
+            n=i.toString().split('').map(Number);
 
-            i='00'+i;
-           
+
+            
 
         }
 
