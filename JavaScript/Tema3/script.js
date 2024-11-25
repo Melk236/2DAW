@@ -1,14 +1,16 @@
+var n;
+
 function matricula() {
-    var n,doblePareja=0,trio=0,rscaleraSimple=0,escaleraCompleta=0,pocker=0;
 
     do {
-        n = prompt('Introduzca una matricula');
-        if (n.length != 4 || isNaN(n) || n.indexOf(' ') >= 0) {
+       n= prompt('Introduzca una matricula');
+        if (n.length != 4 || isNaN(n) ||n.indexOf(' ') >= 0) {
             alert('Error, introduzca un numero con cuatro cifras');
+
         }
     } while (n.length != 4 || isNaN(n) || n.indexOf(' ') >= 0);
 
-    var numeros = n.split('', n);
+    var numeros = n.split('', numeros);
     numeros = numeros.map(Number);
     numeros.sort();
 
@@ -32,33 +34,8 @@ function matricula() {
         document.write('La matricula: ' + n + ' es una doble pareja');
 
     }
-   
-    
-    
 
-}
-
-function probabilidad(){
-
-    for(let i=0;i<10000;i++){
-        if(i<10){
-            if(i=0){
-                pocker++;
-            }
-            else{
-                trio++;
-            }
-        }
-        else if(i<100){
-            n=i.toString();
-            
-
-
-            
-
-        }
-
-    }
 
 }
 matricula();
+
