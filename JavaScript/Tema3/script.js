@@ -50,7 +50,8 @@ function probabilidad(){
             }
         }
         else if(i<100){
-            n=i.toString().split('').map(Number);
+            n=i.toString();
+            
 
 
             
