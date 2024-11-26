@@ -20,18 +20,18 @@ function matricula() {
     }
     else if (numeros[0] == numeros[1] - 1 && numeros[1] == numeros[2] - 1 && numeros[2] == numeros[3] - 1) {
 
-        document.write('La matricula: ' + n + ' es una escalera completa');
+        document.getElementById('inf').innerHTML='La matricula: ' + n + ' es una escalera completa';
 
     }
-    else if ((numeros[0] == numeros[1] - 1 && numeros[1] == numeros[2] - 1) || (numeros[1] == numeros[2] - 1 && numeros[2] == numeros[3] - 1)) {
-        document.write('La matricula: ' + n + ' es una escalera simple');
+    else if ((numeros[0] == numeros[1] - 1 && numeros[1] == numeros[2] - 1) || (numeros[1] == numeros[2] - 1 && numeros[2] == numeros[3] - 1)||(numeros[0]==numeros[1]-1&&numeros[1]==numeros[3]-1)) {
+        document.getElementById('inf').innerHTML='La matricula: ' + n + ' es una escalera simple';
     }
     else if ((numeros[0] == numeros[1] && numeros[1] == numeros[2]) || (numeros[1] == numeros[2] && numeros[2] == numeros[3])) {
-        document.write('La matricula: ' + n + ' es un trio');
+         document.getElementById('inf').innerHTML='La matricula: ' + n + ' es un trio';
     }
     else if (numeros[0] == numeros[1] && numeros[2] == numeros[3]) {
 
-        document.write('La matricula: ' + n + ' es una doble pareja');
+         document.getElementById('inf').innerHTML='La matricula: ' + n + ' es una doble pareja';
 
     }
 
