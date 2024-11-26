@@ -1,12 +1,13 @@
 var n;
 
 function matricula() {
-
+    
     do {
         n = document.getElementById('mat').value;
         if (n.length != 4 || isNaN(n) || n.indexOf(' ') >= 0) {
-            alert('Error, introduzca un numero con cuatro cifras');
-
+            alert('ERROR,introduzca un numero de 4 cifras');
+            return;
+            
         }
     } while (n.length != 4 || isNaN(n) || n.indexOf(' ') >= 0);
 
@@ -34,7 +35,9 @@ function matricula() {
         document.getElementById('inf').innerHTML = 'La matricula: ' + n + ' es una doble pareja';
 
     }
-
+    else{
+        document.getElementById('inf').innerHTML = 'No es ninguna combinación';
+    }
 
 }
 
