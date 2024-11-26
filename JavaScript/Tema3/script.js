@@ -1,10 +1,10 @@
 var n;
 
 function matricula() {
-    
+
     do {
-       n=document.getElementById('mat').value;
-        if (n.length != 4 || isNaN(n) ||n.indexOf(' ') >= 0) {
+        n = document.getElementById('mat').value;
+        if (n.length != 4 || isNaN(n) || n.indexOf(' ') >= 0) {
             alert('Error, introduzca un numero con cuatro cifras');
 
         }
@@ -16,22 +16,22 @@ function matricula() {
 
 
     if (numeros[0] == numeros[1] && numeros[0] == numeros[2] && numeros[0] == numeros[3]) {
-        document.getElementById('inf').innerHTML='La matricula: ' + n + ' es un poker';
+        document.getElementById('inf').innerHTML = 'La matricula: ' + n + ' es un poker';
     }
     else if (numeros[0] == numeros[1] - 1 && numeros[1] == numeros[2] - 1 && numeros[2] == numeros[3] - 1) {
 
-        document.getElementById('inf').innerHTML='La matricula: ' + n + ' es una escalera completa';
+        document.getElementById('inf').innerHTML = 'La matricula: ' + n + ' es una escalera completa';
 
     }
-    else if ((numeros[0] == numeros[1] - 1 && numeros[1] == numeros[2] - 1) || (numeros[1] == numeros[2] - 1 && numeros[2] == numeros[3] - 1)||(numeros[0]==numeros[1]-1&&numeros[1]==numeros[3]-1)) {
-        document.getElementById('inf').innerHTML='La matricula: ' + n + ' es una escalera simple';
+    else if ((numeros[0] == numeros[1] - 1 && numeros[1] == numeros[2] - 1) || (numeros[1] == numeros[2] - 1 && numeros[2] == numeros[3] - 1) || (numeros[0] == numeros[1] - 1 && numeros[1] == numeros[3] - 1)) {
+        document.getElementById('inf').innerHTML = 'La matricula: ' + n + ' es una escalera simple';
     }
     else if ((numeros[0] == numeros[1] && numeros[1] == numeros[2]) || (numeros[1] == numeros[2] && numeros[2] == numeros[3])) {
-         document.getElementById('inf').innerHTML='La matricula: ' + n + ' es un trio';
+        document.getElementById('inf').innerHTML = 'La matricula: ' + n + ' es un trio';
     }
     else if (numeros[0] == numeros[1] && numeros[2] == numeros[3]) {
 
-         document.getElementById('inf').innerHTML='La matricula: ' + n + ' es una doble pareja';
+        document.getElementById('inf').innerHTML = 'La matricula: ' + n + ' es una doble pareja';
 
     }
 
