@@ -50,5 +50,3 @@ function matricula() {
     alert(document.cookie);
 
 }
-
-
