@@ -12,12 +12,19 @@ function matricula() {
     }
 
     else {
-      
-        let cookie=document.cookie='valor=0';
-        let valor=cookie.split('=');
+        let contador = 0;
+        let cookies = document.cookie.split('; '); // Dividir todas las cookies en un arreglo
+        
+        for(let i=0;i<cookies.length;i++){
+            let partes=cookies[i].split('=');
+                if(partes[0]=='contador'){
+                    contador=parseInt(partes[1]);
+                }
+        }
+        contador++;
 
-        valor[1]=parseInt(valor[1])+1;
-        document.cookie='valor= '+valor[1];
+        document.cookie='contador='+contador;
+        
         
     }
 
@@ -52,7 +59,7 @@ function matricula() {
     else {
         document.getElementById('inf').innerHTML = 'No es ninguna combinación';
     }
-    console.log(document.cookie);
+    alert(document.cookie);
 
 }
 function total(){
