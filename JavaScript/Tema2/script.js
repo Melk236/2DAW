@@ -1,4 +1,4 @@
-calcBits();//Llamada al método que calcula el movimiento de bits
+
 function calcBits() {
     //Movimiento de bits
     let resultado;
@@ -71,4 +71,6 @@ function calc() {
             i++;//Incrementamos i para que el bucle no sea infinito
         } while (i <= 10);//Condición de ruptura del bucle para que calcule los 10 primeros números de la tabla
     }
+   
 }
+calcBits();//Llamada al método que calcula el movimiento de bits
