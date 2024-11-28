@@ -7,17 +7,19 @@
     <title>Document</title>
 
 </head>
-<body onload="total()">
+<body>
     <h3>Juego de Matrículas</h3>
-    <p>Vamos a jugar al juego de las matrículas,intoduzca un numero de 4 cifras, y te diré qu etipo de elmento es(doble pareja,trio, escalera simple, escalera completa y pocker)</p>
+    <p>Vamos a jugar al juego de las matrículas,intoduzca un numero de 4 cifras,<br> y te diré qu etipo de elmento es(doble pareja,trio, escalera simple, escalera completa y pocker)</p>
     <form >
     <label>Matriculas</label>
     <input type="text" id="mat" placeholder="matricula"><br>
+ 
     <p id=pocker></p>
     <p id="complet"></p>
     <p id="simple"></p>
     <p id="trio"></p>
     <p id="doble"></p>
+   
     <button id="bot" type="button" onclick="matricula()">Enviar</button> 
     <button type="button" onclick="window.open('probabilidad.html','','height=500,width=500')">Probabilidad</button>
 </form>

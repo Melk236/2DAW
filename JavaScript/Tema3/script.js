@@ -1,8 +1,9 @@
-var n, cooking = 0,doblePareja = 0, trio = 0, escaleraSimple = 0, escaleraCompleta = 0, pocker = 0;
+var n,doblePareja = 0, trio = 0, escaleraSimple = 0, escaleraCompleta = 0, pocker = 0;
 
+    total();
 function matricula() {
 
-    window.onload();
+   
     n = document.getElementById('mat').value;
     if (n.length != 4 || isNaN(n) || n.indexOf(' ') >= 0) {
         alert('ERROR,introduzca un numero de 4 cifras');
@@ -11,8 +12,12 @@ function matricula() {
     }
 
     else {
-        cooking++;
-        document.cookie = 'matricula=' + cooking+'; max-age=604800';
+      
+        let cookie=document.cookie='valor=0';
+        let valor=cookie.split('=');
+
+        valor[1]=parseInt(valor[1])+1;
+        document.cookie='valor= '+valor[1];
         
     }
 
@@ -47,7 +52,7 @@ function matricula() {
     else {
         document.getElementById('inf').innerHTML = 'No es ninguna combinación';
     }
-    alert(document.cookie);
+    console.log(document.cookie);
 
 }
 function total(){

@@ -21,6 +21,10 @@ button{
     
 }
 
-p{
-    width: 50%;
+
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
