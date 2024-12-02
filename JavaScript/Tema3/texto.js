@@ -30,7 +30,7 @@ function texto() {
         }
         frase = rojo[nRojo] + ' ' + azul[nAzul] + ' ' + verde[nVerde] + ' ' + amarillo[nAmarillo];
     
-        document.getElementById('frase').innerHTML += rojo[nRojo] + '' + azul[nAzul] + ' ' + verde[nVerde] + ' ' + amarillo[nAmarillo] + '<br>';
+        document.getElementById('frase').innerHTML += '<span style="color:red;">'+rojo[nRojo] + '</span>'+' ' +'<span style="color:blue;">' +azul[nAzul] + '</span> '+' ' +'<span style="color:green;">' +verde[nVerde] + ' </span>' +'<span style="color:yellow;">' +amarillo[nAmarillo]+'</span>' + '<br>';
         frase += rojo[nRojo] + ' ' + azul[nAzul] + ' ' + verde[nVerde] + ' ' + amarillo[nAmarillo];
         rojo.splice(nRojo, 1);
         azul.splice(nAzul, 1);
