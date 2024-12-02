@@ -8,13 +8,11 @@
 </head>
 
 <body>
-
+   <button type="button" onclick="pag()">Enviar</button>
     <script>
-        let cad ='La mañana está fría';
-
-        cad=cad.replaceAll(' ','<br>');
-       document.write(cad);
-        
+      function pag(){
+          window.open('','a',screen.availHeight+','+screen.availWidth/2);
+      }
     </script>
 </body>
 
