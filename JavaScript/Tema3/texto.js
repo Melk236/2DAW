@@ -9,23 +9,42 @@ function texto() {
 
 
 
-
-
-    nRojo = Math.floor(Math.random() * 14)-i;
-    nAzul = Math.floor(Math.random() * 14)-i;
-    nVerde = Math.floor(Math.random() * 14)-i;
-    nAmarillo = Math.floor(Math.random() * 14)-i;
-
-    frase = rojo[nRojo] + ' ' + azul[nAzul] + ' ' + verde[nVerde] + ' ' + amarillo[nAmarillo];
-
-    document.getElementById('frase').innerHTML += rojo[nRojo] + '' + azul[nAzul] + ' ' + verde[nVerde] + ' ' + amarillo[nAmarillo] + '<br>';
-    frase += rojo[nRojo] + ' ' + azul[nAzul] + ' ' + verde[nVerde] + ' ' + amarillo[nAmarillo];
-    rojo.splice(nRojo, 1);
-    azul.splice(nAzul, 1);
-    verde.splice(nVerde, 1);
-    amarillo.splice(nAmarillo, 1);
+    if(i<14){
+        nRojo = Math.floor(Math.random() * 14)-i;
+        if(nRojo<0){
+            nRojo=0;
+        }
     
-    i++;
+        nAzul = Math.floor(Math.random() * 14)-i;
+        if(nAzul<0){
+            nAzul=0;
+        }
+        
+        nVerde = Math.floor(Math.random() * 14)-i;
+        if(nVerde<0){
+            nVerde=0;
+        }
+        nAmarillo = Math.floor(Math.random() * 14)-i;
+        if(nAmarillo<0){
+            nAmarillo=0;
+        }
+        frase = rojo[nRojo] + ' ' + azul[nAzul] + ' ' + verde[nVerde] + ' ' + amarillo[nAmarillo];
+    
+        document.getElementById('frase').innerHTML += rojo[nRojo] + '' + azul[nAzul] + ' ' + verde[nVerde] + ' ' + amarillo[nAmarillo] + '<br>';
+        frase += rojo[nRojo] + ' ' + azul[nAzul] + ' ' + verde[nVerde] + ' ' + amarillo[nAmarillo];
+        rojo.splice(nRojo, 1);
+        azul.splice(nAzul, 1);
+        verde.splice(nVerde, 1);
+        amarillo.splice(nAmarillo, 1);
+        
+        i++;
+        if(i==14){
+            document.getElementById('frase').innerHTML +='No hay mas combinaciones';
+        }   
+    }
+    
+
+   
 
 
 
