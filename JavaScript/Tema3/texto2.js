@@ -12,10 +12,30 @@ function texto() {
     pAmarillo = amarillo[Math.floor(Math.random() * 14)];
     frase = pRojo + ' ' + pAzul + ' ' + pVerde + ' ' + pAmarillo;
 
+    
     if (!aux.includes(frase)) {
 
         document.getElementById('frase').innerHTML +='<span style="color:red">'+pRojo+'</span>'+'<span style="color:blue">'+pAzul+'</span>'+'<span style="color:green">'+pVerde+'</span>'+'<sapn style="color:yellow">'+pAmarillo+'</span>'+'<br>';
        aux.push(frase); 
+         // Si la matrícula es válida, actualiza el contador de cookies
+         let contador = 0;
+         let cookies = document.cookie.split('; '); // Dividir todas las cookies en un arreglo
+         
+         // Recorre las cookies para buscar el contador
+         for(let i = 0; i < cookies.length; i++) {
+             let partes = cookies[i].split('=');
+             // Si se encuentra el contador, lo actualiza
+             if(partes[0] == 'texto') {
+                 contador = parseInt(partes[1]);
+             }
+         }
+         // Incrementa el contador
+         
+         contador++;
+ 
+         // Actualiza el valor del contador en las cookies
+         document.cookie = 'texto=' + contador;
+         alert(document.cookie);
 
     }
 
@@ -30,9 +50,26 @@ function texto() {
         }
 
         document.getElementById('frase').innerHTML +='<span style="color:red">'+pRojo+'</span>'+'<span style="color:blue">'+pAzul+'</span>'+'<span style="color:green">'+pVerde+'</span>'+'<sapn style="color:yellow">'+pAmarillo+'</span>'+'<br>';;
-
+          // Si la matrícula es válida, actualiza el contador de cookies
+          let contador = 0;
+          let cookies = document.cookie.split('; '); // Dividir todas las cookies en un arreglo
+          
+          // Recorre las cookies para buscar el contador
+          for(let i = 0; i < cookies.length; i++) {
+              let partes = cookies[i].split('=');
+              // Si se encuentra el contador, lo actualiza
+              if(partes[0] == 'contador') {
+                  contador = parseInt(partes[1]);
+              }
+          }
+          // Incrementa el contador
+          
+          contador++;
+  
+          // Actualiza el valor del contador en las cookies
+          document.cookie = 'contador=' + contador;
         aux.push(frase);
-
+          alert(documen.cookie);
     }
 
 }
