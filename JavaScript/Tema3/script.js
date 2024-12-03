@@ -30,6 +30,7 @@ function matricula() {
             }
         }
         // Incrementa el contador
+        
         contador++;
 
         // Actualiza el valor del contador en las cookies
