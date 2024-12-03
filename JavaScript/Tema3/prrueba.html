@@ -8,11 +8,19 @@
 </head>
 
 <body>
-   <button type="button" onclick="pag()">Enviar</button>
+
     <script>
-      function pag(){
-          window.open('','a',screen.availHeight+','+screen.availWidth/2);
-      }
+        const array = [];
+       
+        for(let i=0;i<10;i++){
+            array[i]=Math.floor(Math.random()*10)+1;
+            if(array[i]==2){
+                array.splice(i,1);
+                array.push(1,1);
+            }
+
+        }
+        document.write(array.toString());
     </script>
 </body>
 
