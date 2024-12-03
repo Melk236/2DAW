@@ -15,7 +15,7 @@ function texto() {
     
     if (!aux.includes(frase)) {
 
-        document.getElementById('frase').innerHTML +='<span style="color:red">'+pRojo+'</span>'+'<span style="color:blue">'+pAzul+'</span>'+'<span style="color:green">'+pVerde+'</span>'+'<sapn style="color:yellow">'+pAmarillo+'</span>'+'<br>';
+        document.getElementById('frase').innerHTML +='<span style="color:red">'+pRojo+'</span>'+'<span style="color:blue"> '+pAzul+'</span>'+'<span style="color:green"> '+pVerde+'</span>'+'<sapn style="color:yellow"> '+pAmarillo+'</span>'+'<br>';
        aux.push(frase); 
          // Si la matrícula es válida, actualiza el contador de cookies
          let contador = 0;
@@ -49,7 +49,7 @@ function texto() {
             frase = pRojo + ' ' + pAzul + ' ' + pVerde + ' ' + pAmarillo;
         }
 
-        document.getElementById('frase').innerHTML +='<span style="color:red">'+pRojo+'</span>'+'<span style="color:blue">'+pAzul+'</span>'+'<span style="color:green">'+pVerde+'</span>'+'<sapn style="color:yellow">'+pAmarillo+'</span>'+'<br>';;
+        document.getElementById('frase').innerHTML +='<span style="color:red">'+pRojo+'</span>'+'<span style="color:blue"> '+pAzul+'</span>'+'<span style="color:green"> '+pVerde+'</span>'+'<sapn style="color:yellow"> '+pAmarillo+'</span>'+'<br>';
           // Si la matrícula es válida, actualiza el contador de cookies
           let contador = 0;
           let cookies = document.cookie.split('; '); // Dividir todas las cookies en un arreglo
