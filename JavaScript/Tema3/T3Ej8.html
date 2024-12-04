@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var perillos=["Rocket","Flah","Bella","Slugger"];
+        var ciudades='Manchester,London,Liverpool,Birmingham,Leeds,Carlisle';
+        for(let i=0;i<perillos.length;i++){
+            ciudades+=','+perillos[i];
+            perillos[i]=perillos[i].toLowerCase();
+            if(perillos[i].indexOf('c')>-1){
+                perillos.splice(i,1);
+            }
+            
+        }   
+        perillos.unshift('Estepona');
+        //El console log ya que la c estaba en mayusculas
+        console.log(perillos.toString());
+        console.log(ciudades)
+        
+        
+    </script>
+</body>
+</html>

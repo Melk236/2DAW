@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul></ul>
+    <script>
+        var list=document.querySelector('ul');
+        list.innerHTML="";
+        var saludos=['¡Feliz cumpleaños!','Feliz navidades a todos','Te deseo una feliz navidad','En Navidades nos vamos de fiesta','Pasa un buen fin de semana'];
+
+        for(let i=0;i<saludos.length;i++){
+            
+            var input=saludos[i];
+            saludos[i]=saludos[i].toLowerCase();
+            if(saludos[i].indexOf('fiesta')===-1){
+                var result=input;
+                var listItem=document.createElement('li');
+                listItem.textContent=result;
+                list.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+</html>
