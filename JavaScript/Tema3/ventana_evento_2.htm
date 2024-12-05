@@ -13,9 +13,9 @@
          let color = document.getElementById('sel').value;
 
          ventana = window.open("texto_de_secundaria_2.htm", "ventana", "width=400, height=300, left=" + left + ", top=" + top + ", resizable=no, menubar=no, toolbar=no, directories=no, location=no, scrollbars=no, status=no");
-
-        
-
+         ventana.onload=function(){
+            ventana.document.body.style.backgroundColor = color;
+         }
       }
 
       function cerrarVentana() {
@@ -31,9 +31,9 @@
       <label>Cordenada Y</label>
       <input type="text" id="y"><br><br>
       <select id="sel">
-         <option id="rojo">Rojo</option>
-         <option id="verde">Verde</option>
-         <option id="Azul">Azul</option>
+         <option value="red">Rojo</option>
+         <option value="green">Verde</option>
+         <option value="blue">Azul</option>
       </select><br><br>
       <button type="button" onClick="abrirVentana();">
          Pulse.
