@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function ciudad() {
+            let ciudad = document.getElementById('ciudad').value;
+            ciudad=ciudad.toLowerCase();
+            const array = ['12324;Madrid', '53235;Roquetas', '28924;Estepona', '25434;Bilbao', '23311;Granada', '2356123;Sevilla'];
+
+            for (let i = 0; i < array.length; i++) {
+                let busqueda = array[i].toLowerCase();
+                
+                if (busqueda.indexOf(ciudad) > -1) {
+                    document.getElementById('busc').innerHTML = array[i];
+                }
+            }
+        }
+    </script>
+    <label>Introduzca el nombre de la ciudad</label><br>
+    <input type="text" id="ciudad"><br><br>
+    <button type="button" onclick="ciudad()">Buscar</button>
+    <p id="busc"></p>
+</body>
+
+</html>
