@@ -10,17 +10,43 @@
 <body>
 
     <script>
-        const array = [];
-       
-        for(let i=0;i<10;i++){
-            array[i]=Math.floor(Math.random()*10)+1;
-            if(array[i]==2){
-                array.splice(i,1);
-                array.push(1,1);
-            }
+        var libro1 = {
+            titulo: 'Cien Años de Soledad',
+            autor: 'Gabriel García Márquez',
+            paginas: 417,
+            prestado: false
 
-        }
-        document.write(array.toString());
+        };
+        var libro2={
+            titulo:'Hola',
+            autor:'Mohamed',
+            paginas:2004,
+            prestado:false
+        };
+        var biblioteca={
+            libros:[],
+
+            mostrarLibros: function(){
+              for(let i=0;i<this.libros.length;i++){
+                console.log('El libro se llama '+this.libros[i].titulo+' y el autor es '+this.libros[i].autor+', páginas '+this.libros[i].paginas+' '+this.libros[i].prestado);
+              }  
+            },
+            prestarLibro: function(nombre){
+                if(this.libros[0].titulo==nombre){
+                    this.libros[0].prestado=true;
+                }
+                else if(this.libros[1].titulo==nombre){
+                    this.libros[1].prestado=true;
+                }
+                else{
+                    console.log('No tenemos ningún libro que se llame así');
+                }
+            }
+           
+        };
+        biblioteca.libros.push(libro1,libro2)
+        biblioteca.prestarLibro('Hola');
+      biblioteca.mostrarLibros();
     </script>
 </body>
 
