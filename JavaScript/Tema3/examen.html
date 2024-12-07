@@ -1,16 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        var array=['Mohamed','Anas','Akram','Touria','Ayman'];
-        let nombres=array.join('<br>');
-        document.write(nombres);
-        
+        var minutos, segundos = 15, hora, intervalo;
+        var fecha = new Date();
+        function cron() {
+
+
+            fecha.setMinutes(document.getElementById('min').value);
+            fecha.setSeconds(segundos);
+            minutos = fecha.getMinutes();
+
+            if (fecha.getMinutes() < 10) {
+                minutos = '0' + minutos;
+            }
+
+            if (fecha.getSeconds() < 10) {
+                segundos = '0' + segundos;
+            }
+
+
+
+            intervalo = setInterval(cron2, 1000);
+        }
+        function cron2() {
+            if (fecha.getSeconds() == 0 && fecha.getMinutes() == 0) {
+                clearInterval(intervalo);
+            }
+
+            hora = minutos + ':' + segundos;
+            document.getElementById('crono').innerHTML = hora;
+            fecha.setSeconds(fecha.getSeconds() - 1);
+
+            if (fecha.getSeconds() < 0) {
+                fecha.setSeconds(59);
+                fecha.setMinutes(0);
+            }
+
+            if (fecha.getMinutes() < 10) {
+                minutos = '0' + fecha.getMinutes();
+            }
+            else {
+                minutes = fecha.getMinutes();
+            }
+
+            if (fecha.getSeconds() < 10) {
+                segundos = '0' + fecha.getSeconds();
+            }
+            else {
+                segundos = fecha.getSeconds();
+            }
+
+        }
     </script>
+    <label>Introduzca los minutos</label>
+    <input id="min" type="text">
+    <button type="button" onclick="cron()">Iniciar</button>
+    <p id="crono"></p>
 </body>
+
 </html>

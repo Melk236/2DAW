@@ -11,15 +11,32 @@
          let left = document.getElementById('x').value;
          let top = document.getElementById('y').value;
          let color = document.getElementById('sel').value;
-
+         let tiempo=document.getElementById('tiempo').value;
+         let texto=document.getElementById('texto').value;
+         
+         tiempo=Number(tiempo);
+         
          ventana = window.open("texto_de_secundaria_2.htm", "ventana", "width=400, height=300, left=" + left + ", top=" + top + ", resizable=no, menubar=no, toolbar=no, directories=no, location=no, scrollbars=no, status=no");
+         ventana.document.body.innerHTML=texto;
          ventana.onload=function(){
+            ventana.document.body.style.fontSize=document.getElementById('tamaño').value;
             ventana.document.body.style.backgroundColor = color;
+            ventana.document.body.innerHTML+='<h1>'+texto+'</h1>';
+            
          }
+         setTimeout(cerrarVentana,tiempo);
       }
 
       function cerrarVentana() {
          ventana.close();
+      }
+      function darFocus(){
+         document.getElementById('x').focus();
+         
+
+      }
+      function quitarFocus(){
+         document.getElementById('x').blur();
       }
    </script>
 </head>
@@ -27,9 +44,16 @@
 <body>
    <center>
       <label>Cordenada X</label>
-      <input type="text" id="x">
+      <input type="text" id="x"><br>
       <label>Cordenada Y</label>
-      <input type="text" id="y"><br><br>
+      <input type="text" id="y"><br>
+      <label>Tiempo activa</label>
+      <input type="text" id="tiempo"><br>
+      <label>Texto</label>
+      <input type="text" id="texto"><br>
+      <label>Tamaño</label>
+      <input type="text" id="tamaño">
+      <br><br>
       <select id="sel">
          <option value="red">Rojo</option>
          <option value="green">Verde</option>
@@ -39,6 +63,8 @@
          Pulse.
       </button>
       <button type="button" onclick="cerrarVentana()">Cerrar</button>
+      <button onclick="darFocus()">Focus</button>
+      <button onclick="quitarFocus()">Blur</button>
    </center>
 </body>
 

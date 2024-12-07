@@ -47,6 +47,12 @@
         biblioteca.libros.push(libro1,libro2)
         biblioteca.prestarLibro('Hola');
       biblioteca.mostrarLibros();
+
+      const mapa=new Map();
+        mapa.set('libro1',libro1);
+        mapa.set('libro2',libro2);
+
+        console.log(mapa.get('libro1').prestado);
     </script>
 </body>
 
