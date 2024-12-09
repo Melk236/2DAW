@@ -257,9 +257,35 @@ a{
 
 .cards img{
     width: 100%;
+    
 }
 
 img{
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.enlace-moodle {
+    display: block;
+   margin-top: 100px;
+    text-decoration: none; 
+    color: #007bff;        
+    font-weight: bold;      
+    font-size: 30px;       
+    padding: 5px 10px;      
+    border-radius: 5px;     
+    background-color: #f8f9fa; 
+    transition: all 0.3s ease;
+}
+
+
+.enlace-moodle:hover {
+    color: #ffffff;        
+    background-color: #007bff;
+    text-decoration: underline; 
+
+}
+.enlace-moodle:focus {
+    outline: none;          
+    border: 2px solid #007bff;
 }
