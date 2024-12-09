@@ -9,61 +9,113 @@
 
 <body>
     <script>
-        var minutos, segundos = 15, hora, intervalo;
-        var fecha = new Date();
-        function cron() {
 
+        function matricula() {
+            let mat = document.getElementById('mat').value;
 
-            fecha.setMinutes(document.getElementById('min').value);
-            fecha.setSeconds(segundos);
-            minutos = fecha.getMinutes();
+            if (mat.length != 4 || isNaN(mat) || mat.includes(' ')) {
+                alert('Introduzca una mátricula válida, con 4 cifras');
 
-            if (fecha.getMinutes() < 10) {
-                minutos = '0' + minutos;
+                return;
+
             }
 
-            if (fecha.getSeconds() < 10) {
-                segundos = '0' + segundos;
+            if (poker(mat)) {
+                document.getElementById('tip').innerHTML=mat+' es un Poker';
+                alert('hola');
+
+            }
+
+            else if (escaleraCompleta(mat)) {
+                document.getElementById('tip').innerHTML=mat+' es una Escalera Completa';
+            }
+
+            else if(  escaleraSimple(mat)){
+                document.getElementById('tip').innerHTML=mat+' es una Escalera Simple';
+            }
+            else if(trio(mat)){
+                document.getElementById('tip').innerHTML=mat+' es un Trío';
+            }
+            else if(doblePareja(mat)){
+                document.getElementById('tip').innerHTML=mat+' es una Doble Pareja';
+            }
+           
+            else{
+                document.getElementById('tip').innerHTML=mat+' no es ninguna combinación';
             }
 
 
 
-            intervalo = setInterval(cron2, 1000);
         }
-        function cron2() {
-            if (fecha.getSeconds() == 0 && fecha.getMinutes() == 0) {
-                clearInterval(intervalo);
+
+        function poker(mat) {
+
+            let n = mat.split('');
+            n = n.map(Number);
+           
+            if(n[0]==n[1] && n[1]==n[2] && n[2]==n[3]){
+                return true;
+            }
+            else{
+                return false;
             }
 
-            hora = minutos + ':' + segundos;
-            document.getElementById('crono').innerHTML = hora;
-            fecha.setSeconds(fecha.getSeconds() - 1);
+        }
+        function escaleraCompleta(mat){
+            let n = mat.split('');
+            n = n.map(Number);
+           n.sort((a,b)=>a-b);
 
-            if (fecha.getSeconds() < 0) {
-                fecha.setSeconds(59);
-                fecha.setMinutes(0);
+            if(n[0]==n[1]-1 && n[1]==n[2]-1 && n[2]==n[3]-1){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        function escaleraSimple(mat){
+            let n = mat.split('');
+            n = n.map(Number);
+           n.sort((a,b)=>a-b);
+
+            if((n[0]==n[1]-1 && n[1]==n[2]-1) || (n[1]==n[2]-1 && n[2]==n[3]-1)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        function trio(mat){
+            let n = mat.split('');
+            n = n.map(Number);
+            n.sort((a,b)=>a-b);
+
+            if((n[0]==n[1] && n[1]==n[2]) || (n[1]==n[2] && n[2]==n[3])){
+                return true;
+            }
+            else{
+                return false;
             }
 
-            if (fecha.getMinutes() < 10) {
-                minutos = '0' + fecha.getMinutes();
-            }
-            else {
-                minutes = fecha.getMinutes();
-            }
 
-            if (fecha.getSeconds() < 10) {
-                segundos = '0' + fecha.getSeconds();
-            }
-            else {
-                segundos = fecha.getSeconds();
-            }
+        }
+        function doblePareja(mat){
+            let n = mat.split('');
+            n = n.map(Number);
+            n.sort((a,b)=>a-b);
 
+            if(n[0]==n[1] && n[2]==n[3]){
+                return true;
+            }
+            else{
+                return false;
+            }
         }
     </script>
-    <label>Introduzca los minutos</label>
-    <input id="min" type="text">
-    <button type="button" onclick="cron()">Iniciar</button>
-    <p id="crono"></p>
+    <label>Introduzca la matricula</label>
+    <input id="mat" type="text">
+    <button type="button" onclick="matricula()">Enviar</button>
+    <p id="tip"></p>
 </body>
 
 </html>
