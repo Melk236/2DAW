@@ -1,5 +1,5 @@
 let v1, v2, v3, v4;
-var fecha=new Date();
+var fecha = new Date();
 var usuario = {
     us: 'alumno',
     contraseña: 'bueno'
@@ -9,22 +9,22 @@ const array = [];//Variable globales para poder operer con el array y la fecha
 function ventana1() {
     v1 = window.open("", "ventana", "width=300,height=300");
     //En este método se abre la ventana y se comprueba la contraseña del objeto y el input introducido
-var validar;
-var input=document.getElementById('cont').value;
+    var validar;
+    var input = document.getElementById('cont').value;
     if (usuario.contraseña !== input) {
-        validar='Usario incorrecto';
+        validar = 'Usario incorrecto';
         return;
     }
 
     else {
-       validar='Usario correcto';
+        validar = 'Usario correcto';
     }
-    usuario.contraseña=document.getElementById('nue').value;
-    v1.document.body.innerHTML=validar+'<br>';
-    v1.document.body.innerHTML+='<label> Nueva Contraseña</label>';
-    v1.document.body.innerHTML+='<input type="text"></input>';
-   
-    
+    usuario.contraseña = document.getElementById('nue').value;
+    v1.document.body.innerHTML = validar + '<br>';
+    v1.document.body.innerHTML += '<label> Nueva Contraseña</label>';
+    v1.document.body.innerHTML += '<input type="text"></input>';
+
+
 
 
 }
@@ -37,7 +37,7 @@ function ventana2() {
 
     var n = document.getElementById('select').value;//Los valores que va acontener el array
     var v = Math.floor(Math.random() * 9);
-    
+
     var mayor;
     var menor;
     if (v < 6) {
@@ -86,13 +86,13 @@ function ventana3() {
         }
     }
 
-    v3.document.body.innerHTML ='Los numeros impares son: '+ array2.toString();
+    v3.document.body.innerHTML = 'Los numeros impares son: ' + array2.toString();
 }
 function ventana4() {
     //En este método se muestra la contraseña  actual del usario y la fecha de la ultima modificaicon
     v4 = window.open("", "", "width=300,height=300,left=2000,top=1000");
     v4.document.body.innerHTML = 'La contraseña del usuario es: ' + usuario.contraseña;
-    v4.document.body.innerHTML='La ultima vez cambiada la fecha es: '+fecha;
+    v4.document.body.innerHTML += 'La ultima vez cambiada la fecha es: ' + fecha;
 }
 function cerrar1() {
     v1.close();
