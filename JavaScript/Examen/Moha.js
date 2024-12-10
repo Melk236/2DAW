@@ -1,105 +1,109 @@
-//Sec crea una funcion para realizar las comprobaciones del nuestros 4 triangulos
-function triangulo(){
-    let l1,l2,l3,contador=0,equilatero=0,escaleno=0,isosceles=0;//Se definen las variables para su posterior uso
+let v1, v2, v3, v4;
+var fecha=new Date();
+var usuario = {
+    us: 'alumno',
+    contraseña: 'bueno'
 
-    do{//El bucle principal para que se introduzca justo 4 triangulos.
-
-    l1=prompt('Introduzca la longitud del lado');//Pedimos al usuario que nos introduzca la longitud de los lados
-    l1=Number(l1);//Se pasa a numero la longitud de cada lado
-
-        if(l1<=0){/*Comprobamos que el lado no es cero y es positivo, 
-                    si no cumple con la condicion vamos preguntadole al usuario en un bucle hasta que la condicion de que sea positiva se cumpla*/
-            do{
-                l1=prompt('Error, vuelva a introducir un lado');
-                l1=Number(l1);   
-            }while(l1<=0);
-        
-        }
-
-    l2=prompt('Introduzca la longitud del lado');
-    l2=Number(l2);
-
-    if(l2<=0){
-        do{
-            l2=prompt('Error, vuelva a introducir un lado');
-            l2=Number(l2);   
-        }while(l2<=0);
-    
+};
+const array = [];//Variable globales para poder operer con el array y la fecha
+function ventana1() {
+    v1 = window.open("", "ventana", "width=300,height=300");
+    //En este método se abre la ventana y se comprueba la contraseña del objeto y el input introducido
+var validar;
+var input=document.getElementById('cont').value;
+    if (usuario.contraseña !== input) {
+        validar='Usario incorrecto';
+        return;
     }
-    l3=prompt('Introduzca la longitud del lado');
-    l3=Number(l3);
-    
-    if(l3<=0){
-        do{
-            l3=prompt('Error, vuelva a introducir el lado');
-            l3=Number(l3);   
-        }while(l3<=0);
-    
+
+    else {
+       validar='Usario correcto';
     }
+    usuario.contraseña=document.getElementById('nue').value;
+    v1.document.body.innerHTML=validar+'<br>';
+    v1.document.body.innerHTML+='<label> Nueva Contraseña</label>';
+    v1.document.body.innerHTML+='<input type="text"></input>';
+   
     
 
-       
-    if(l1+l2>l3&&l2+l3>l1&&l1+l3>l2){//Con este if comprobamos que la suma de dos cualesquiera lados sea mayor que el tercer lado
-        
-        if(l1==l2&&l2==l3&&l1==l3){//este if comprueba que los tres lados son iguales(equilatero).
-            alert('Es un triangulo equilatero');
-            equilatero++;//Aumentamos el contador  para despues visualizar cuantos triangulos de cad tipo tenemmos
-        }
-        else if(l1==l2||l2==l3||l3==l1){//este if comprueba que los dos lados son iguales(isosceles).
-            alert('Es un triangulo isosceles');
-            isosceles++;//Aumentamos el contador  para despues visualizar cuantos triangulos de cad tipo tenemmos
-
-        }
-        else{
-            alert('Es un triangulo escaleno');
-            escaleno++;
-        }
-        contador++;//Aumentamos el contador pasando al siguiente triangulo
-    }
-    else{
-        alert('ERROR, el triangulo no cumple una de las propiedades de los triangulos');
-        //Si no se cumple la propiedad no aumentamos el contador,para tener exactamen 4 triangulos introducidos
-    }
-
-    
-    }while(contador<4);
-    //Visualizamos cuantos triangulos tenemos de cada tipo.
-    document.write('Hay '+equilatero+' triangulos equilateros<br>');
-    document.write('Hay '+isosceles+' triangulos isosceles<br>');
-    document.write('Hay '+escaleno+' triangulos escalenos<br>');
-
-        //Con esta serie de if anidados,vemos cual es el hay en menor cantidad
-    if(equilatero<escaleno){
-        if(equilatero<isosceles){
-            document.write('Hay menor cantidad de triangulos equilateros: '+equilatero);
-        }
-        else if(equilatero==isosceles){
-            document.write('Hay menor cantidad de triangulos equilateros: '+equilatero+'<br>');
-            document.write('Y tambien hay menor cantidad de triangulos isosceles: '+isosceles);
-        }
-
-        
-    }
-    else if(isosceles<equilatero){
-        if(isosceles<escaleno){
-            document.write('Hay menor cantidad de triangulos isosceles: '+isosceles+'<br>');
-        }
-        else if(isosceles==escaleno){
-            document.write('Hay menor cantidad de triangulos isosceles: '+isosceles+'<br>');
-            document.write('Hay menor cantidad de triangulos escalenos: '+escaleno);
-        }
-        
-    }
-    else if(equilatero==escaleno){
-        document.write('Hay menor cantidad de triangulos escalenos: '+escaleno+'<br>');
-        document.write('Hay menor cantidad de triangulos equilateros: '+equilatero+'<br>');
-
-    }
-    else{
-        document.write('Hay menor cantidad de triangulos escalenos: '+escaleno+'<br>');
-        
-        
-    }
 
 }
-triangulo();//Se realiza la llmada de la funcion.
+
+
+
+function ventana2() {
+    //En la ventana 2 se crea el array con eltamaño de 6 a 9 con el random
+    v2 = window.open("", "", "width=300,height=300,left=0,top=1000");
+
+    var n = document.getElementById('select').value;//Los valores que va acontener el array
+    var v = Math.floor(Math.random() * 9);
+    
+    var mayor;
+    var menor;
+    if (v < 6) {
+        v = 6;
+    }
+
+
+    for (let i = 0; i < v; i++) {
+        array[i] = Math.floor(Math.random() * n);
+
+    }
+    mayor = array[0];
+
+    menor = array[0];
+    //Con este bucle para saber cual es el menor y cual es el mayor
+    for (let i = 0; i < array.length; i++) {
+        if (mayor < array[i]) {
+            mayor = array[i];
+
+        }
+        if (menor > array[i]) {
+            menor = array[i];
+
+        }
+
+    }
+    var array2 = [];
+    //Rellenamos el array con el valor mas pequeño al mas grande
+    for (let i = menor; i <= mayor; i++) {
+        array2[i] = i;
+
+    }
+
+    v2.document.body.innerHTML = 'El array: ' + array.toString() + '<br>';
+    v2.document.body.innerHTML += 'Desde el menor al mayor: ' + array2.toString();
+    //Se muestra en la ventana
+}
+function ventana3() {
+    v3 = window.open("", "", "width=300,height=300,left=2000,top=0");
+    var array2 = [];
+    var j = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 != 0) {//Condicion para saber si el numero es par o impar
+            array2[j] = array[i];
+            j++;
+        }
+    }
+
+    v3.document.body.innerHTML ='Los numeros impares son: '+ array2.toString();
+}
+function ventana4() {
+    //En este método se muestra la contraseña  actual del usario y la fecha de la ultima modificaicon
+    v4 = window.open("", "", "width=300,height=300,left=2000,top=1000");
+    v4.document.body.innerHTML = 'La contraseña del usuario es: ' + usuario.contraseña;
+    v4.document.body.innerHTML='La ultima vez cambiada la fecha es: '+fecha;
+}
+function cerrar1() {
+    v1.close();
+}
+function cerrar2() {
+    v2.close();
+}
+function cerrar3() {
+    v3.close();
+}
+function cerrar4() {
+    v4.close();
+}
+
