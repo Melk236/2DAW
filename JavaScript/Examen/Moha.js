@@ -6,28 +6,28 @@ var usuario = {
 
 };
 const array = [];//Variable globales para poder operer con el array y la fecha
+
 function ventana1() {
+    // Abrir la nueva ventana
     v1 = window.open("", "ventana", "width=300,height=300");
-    //En este método se abre la ventana y se comprueba la contraseña del objeto y el input introducido
-    var validar;
-    var input = document.getElementById('cont').value;
-    if (usuario.contraseña !== input) {
-        validar = 'Usario incorrecto';
-        return;
-    }
 
-    else {
-        validar = 'Usario correcto';
-    }
-    usuario.contraseña = document.getElementById('nue').value;
-    v1.document.body.innerHTML = validar + '<br>';
-    v1.document.body.innerHTML += '<label> Nueva Contraseña</label>';
-    v1.document.body.innerHTML += '<input type="text"></input>';
-
-
-
-
+    // Asignar el evento onload para cambiar el color y añadir el contenido
+    v1.onload = function() {
+        // Cambiar el color de fondo de la ventana
+        v1.document.body.style.backgroundColor = 'green';
+        
+        // Insertar contenido en la ventana
+        var validar = 'Hola';
+        
+        // Usamos innerHTML solo una vez para evitar sobrescribir todo el contenido
+        v1.document.body.innerHTML = validar + '<br>';
+        
+        // Añadimos los nuevos elementos sin sobrescribir el contenido anterior
+        v1.document.body.innerHTML += '<label> Nueva Contraseña</label>';
+        v1.document.body.innerHTML += '<input type="text"></input>';
+    };
 }
+
 
 
 
