@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        <label>Nombre</label>
+        <input id="nombre"><br><br>
+        <label>Apellidos</label>
+        <input type="text" id="apellidos"><br><br>
+        <label>Email</label>
+        <input type="text" id="email"><br><br>
+        <label>Télefono</label>
+        <input type="text" id="tel">
+        <button type="button" onclick="comp()">Enviar</button>
+        
+
+        
+    <form/>
+        <p id="parrafo"></p>
+    <script>
+    function comp(){
+        document.getElementById('parrafo').innerHTML='';
+
+        let nombre=document.getElementById('nombre').value;
+        let apellidos=document.getElementById('apellidos').value;
+        let email=document.getElementById('email').value;
+        let patronEmail=/^[a-zA-Z0-9]+[-_]?@{1,1}[a-zA-Z]+\.[a-zA-Z]+$/;
+        let telefono=document.getElementById('tel').value;
+        let patronTel=/^[0-9]{9,9}$/;
+
+
+        if(nombre==''){
+            document.getElementById('parrafo').innerHTML='Error, el campo nombre está vacío<br>';
+        }
+        if(apellidos==''){
+            document.getElementById('parrafo').innerHTML+='Error, el campo apellidos está vacío<br>';
+        }
+        if(patronEmail.test(email)){
+            document.getElementById('parrafo').innerHTML+='Email correcto<br>';
+        }
+        else{
+            document.getElementById('parrafo').innerHTML+='Email incorrecto<br>';
+        }
+        if(patronTel.test(telefono)){
+            document.getElementById('parrafo').innerHTML+='Número de télefono correcto';
+        }
+        else{
+            document.getElementById('parrafo').innerHTML+='Número de télefono incorrecto';
+        }
+
+    }
+    </script>
+</body>
+</html>
