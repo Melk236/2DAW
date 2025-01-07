@@ -10,11 +10,26 @@ function comGrosor(){
 function auGrosor(){
 
     let tabla=document.getElementById('tabla1');
-    tabla.style.borderWidth=document.getElementById('aumento').value;
+
+    let grosor=tabla.style.borderWidth;
+    grosor=grosor.replace('px','');
+ 
+    grosor=Number(grosor);
+    grosor-=1;
+ 
+    tabla.style.borderWidth=grosor;
 }
 
 function disGrosor(){
 
     let tabla=document.getElementById('tabla1');
-    tabla.style.borderWidth=document.getElementById('dis').value;
+
+   let grosor=tabla.style.borderWidth;
+   grosor=grosor.replace('px','');
+
+   grosor=Number(grosor);
+   grosor+=1;
+
+   tabla.style.borderWidth=grosor;
+   
 }
