@@ -50,23 +50,12 @@ grosor del borde de la tabla mediante un boton.
             </td>
          </tr>
       </table>
-<br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       <p>
       </p>
       <label>Grosor de la celda</label>
       <button onclick="grosorCelda()">Enviar</button>
       <p id="parrafo"></p>
-      <script>
-         function grosorCelda(){
-          let tabla=document.getElementById('tabla');
-         
-          let estilo=window.getComputedStyle(tabla);
-            
-          document.getElementById('parrafo').innerHTML=estilo.borderWidth;
-
-         }
-            
-
-      </script>
+      <script src="tabla.js"></script>
    </body>
 </html>
