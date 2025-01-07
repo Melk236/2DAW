@@ -1,21 +1,22 @@
 <!--
 Enunciado del ejercicio:
 
-Completa el siguiente código con una función en javascript que me permita leer el 
-grosor del borde de la tabla mediante un boton.
+Amplia el siguiente código con  funciones en javascript que me permita leer el 
+grosor, aumentar y reducir  del borde de la tabla,   mediante su  boton correspondiente
 -->
+
+
 <html>
    <head>
       <title>
          P&aacute;gina con Javascript.
       </title>
-      <script language="javascript">
-        
-      </script>
+      
    </head>
-   <body>
 
-      <table width="300" align="left" id="tabla1" border="2" id="tabla">
+   <body onLoad="crearNodoTabla();">
+
+      <table width="300" align="left" id="tabla1" border="2">
          <tr height="100">
             <td width="100" align="center">
                Celda 1
@@ -50,12 +51,19 @@ grosor del borde de la tabla mediante un boton.
             </td>
          </tr>
       </table>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <p>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <p>Ver grosor</p>
+      <button type="button" onclick="comGrosor()">Enviar</button>
+      <p>Aumentar grosor</p>
+      <input type="text" id="aumento"> 
+      <button type="button" onclick="auGrosor()">Enviar</button>
+      <p>Disminuir grosor</p>
+      <input type="text" id="dis"> 
+      <button type="button" onclick="disGrosor()">Enviar</button>
+      <p id="parrafo">
       </p>
-      <p>Grosor de la celda</p>
-      <button onclick="grosorCelda()">Enviar</button>
-      <p id="parrafo"></p>
-      <script src="tabla.js"></script>
+
+      <script src="tabla2.js"></script>
+
    </body>
 </html>
