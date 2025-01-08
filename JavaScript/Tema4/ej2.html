@@ -24,12 +24,13 @@
         <p id="parrafo"></p>
     <script>
     function comp(){
+        
         document.getElementById('parrafo').innerHTML='';
 
         let nombre=document.getElementById('nombre').value;
         let apellidos=document.getElementById('apellidos').value;
         let email=document.getElementById('email').value;
-        let patronEmail=/^[a-zA-Z0-9]+[-_]?@{1,1}[a-zA-Z]+\.[a-zA-Z]+$/;
+        let patronEmail=/^[a-zA-Z0-9]+[-_.]?@{1,1}[a-zA-Z]+\.[a-zA-Z]+$/;
         let telefono=document.getElementById('tel').value;
         let patronTel=/^[0-9]{9,9}$/;
 
