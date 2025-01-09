@@ -40,7 +40,7 @@ function pierdeFocoEdad() {
   }
 }
 
-function compNif() {
+document.getElementById('nif').addEventListener('onblur',()=>{
   document.getElementById('errores').innerHTML = '';
   let expresion = /^[0-9]{8,8}-[A-Z]$/;//^ Con este símbolo indicamos que va a empezar con numeros, [] los corchetes aseguran que puede empezar conn cualquier número, {} indica la longitud máxima de los números seguido de un guión litreal y corchetes para decir que tiene que aparecer cualquier letra de la A la Z y el dolar para indicar el final del patrón
   let nif = document.getElementById('nif').value;
@@ -49,7 +49,10 @@ function compNif() {
     document.getElementById('errores').innerHTML = 'Error, introduzca un NIF válido';
     document.getElementById('nif').focus();
   }
-}
+
+});
+
+
 
 function comEmail() {
   document.getElementById('errores').innerHTML = '';
