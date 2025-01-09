@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form id="for">
         <ol>
-        <li><input type="checkbox"><strong>¿Cómo te sientes cuando estás con tus compañeros en la escuela?</strong></li>
-        <hr>
-       <li><input type="checkbox"><strong>Alguien te ha dicho cosas que te han hecho sentir mal o inseguro últimamente?</strong> </li>
-       <hr>
-        <li><input type="checkbox"><strong>¿Te han excluido de actividades, grupos o conversaciones intencionadamente?</strong></li>
-        <hr>
-        <li><input type="checkbox"><strong>¿Alguien te ha empujado, golpeado o hecho daño físicamente en la escuela?</strong></li>
-        <hr>
-        <li><input type="checkbox"><strong>¿Alguien ha tomado, roto o escondido tus cosas sin tu permiso?</strong></li>
-        <hr>
-        <li><input type="checkbox"><strong>¿Te han enviado mensajes hirientes o amenazantes por redes sociales o chats?</strong></li>
-        <hr>
-       <li> <input type="checkbox"><strong>¿Te sientes bien cuando tienes que ir a la escuela cada día?</strong></li>
-       <hr>
-        <li><input type="checkbox"><strong>¿Alguna vez has sentido que necesitas ayuda pero no sabías a quién acudir?</strong></li>
-        <hr>
-        <li><input type="checkbox"><strong>¿Has notado cambios en cómo te sientes o actúas desde que estás en la escuela?</strong></li>
-        <hr>
-        <li><input type="checkbox"><strong>¿Alguien ha visto lo que te pasa pero no ha hecho nada al respecto?</strong></li>
+            <li><input type="checkbox"><strong>¿Cómo te sientes cuando estás con tus compañeros en la escuela?</strong>
+            </li>
+            <hr>
+            <li><input type="checkbox"><strong>Alguien te ha dicho cosas que te han hecho sentir mal o inseguro
+                    últimamente?</strong> </li>
+            <hr>
+            <li><input type="checkbox"><strong>¿Te han excluido de actividades, grupos o conversaciones
+                    intencionadamente?</strong></li>
+            <hr>
+            <li><input type="checkbox"><strong>¿Alguien te ha empujado, golpeado o hecho daño físicamente en la
+                    escuela?</strong></li>
+            <hr>
+            <li><input type="checkbox"><strong>¿Alguien ha tomado, roto o escondido tus cosas sin tu permiso?</strong>
+            </li>
+            <hr>
+            <li><input type="checkbox"><strong>¿Te han enviado mensajes hirientes o amenazantes por redes sociales o
+                    chats?</strong></li>
+            <hr>
+            <li> <input type="checkbox"><strong>¿Te sientes bien cuando tienes que ir a la escuela cada día?</strong>
+            </li>
+            <hr>
+            <li><input type="checkbox"><strong>¿Alguna vez has sentido que necesitas ayuda pero no sabías a quién
+                    acudir?</strong></li>
+            <hr>
+            <li><input type="checkbox"><strong>¿Has notado cambios en cómo te sientes o actúas desde que estás en la
+                    escuela?</strong></li>
+            <hr>
+            <li><input type="checkbox"><strong>¿Alguien ha visto lo que te pasa pero no ha hecho nada al
+                    respecto?</strong></li>
         </ol>
     </form>
     <button type="button" onclick="comprobar()">Enviar</button>
@@ -34,28 +46,28 @@
     <p id="consejo"></p>
 
     <script>
-        function comprobar(){
-            var formulario=document.forms['for'];
-            var contador=0;
-            for(i=0;i<formulario.length;i++){
-                if(formulario.elements[i].checked){
+        function comprobar() {
+            var formulario = document.forms['for'];
+            var contador = 0;
+            for (i = 0; i < formulario.length; i++) {
+                if (formulario.elements[i].checked) {
                     contador++;
                 }
             }
-            if(contador<5){
-            document.getElementById('resultado').innerHTML='Usted no sufre bulling';
-            document.getElementById('consejo').innerHTML='Ninguna recomendación';
+            if (contador < 5) {
+                document.getElementById('resultado').innerHTML = 'Usted no sufre bulling';
+                document.getElementById('consejo').innerHTML = 'Ninguna recomendación';
             }
-        else if(contador==5){
-            document.getElementById('resultado').innerHTML='Podría sufrir bulling';
-            document.getElementById('consejo').innerHTML='Consultalo con un profesional';
+            else if (contador == 5) {
+                document.getElementById('resultado').innerHTML = 'Podría sufrir bulling';
+                document.getElementById('consejo').innerHTML = 'Consultalo con un profesional';
+            }
+            else {
+                document.getElementById('resultado').innerHTML = 'Usted sufre de bulling';
+                document.getElementById('consejo').innerHTML = 'Busca ayuda de inmediato';
+            }
         }
-        else{
-            document.getElementById('resultado').innerHTML='Usted sufre de bulling';
-            document.getElementById('consejo').innerHTML='Busca ayuda de inmediato';
-        }
-        }
-        
+
     </script>
 </body>
 
