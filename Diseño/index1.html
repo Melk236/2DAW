@@ -21,14 +21,14 @@
                 </a>
 
                 <div class="row ">
-                <div class="d-flex flex-wrap justify-content-center align-items-center gap-5 ">
-                    <h4 class="col-6 col-md-2 col-sm-6 text-center"><a href="index1.html">Inicio</a></h4>
-                    <h4 class="col-6 col-md-3 col-sm-6 text-center" ><a href="index3.html">Partidos</a></h4>
-                    <h4 class="col-6 col-md-3 col-sm-6 text-center"><a href="formulario.html">Formulario</a></h4>
-                    <h4 class="col-6 col-md-2 col-sm-6 text-center"><a href="fotos.html">Goles</a></h4>
+                    <div class="d-flex flex-wrap justify-content-center align-items-center gap-5 ">
+                        <h4><a href="index1.html">Inicio</a></h4>
+                        <h4><a href="index3.html">Partidos</a></h4>
+                        <h4><a href="formulario.html">Formulario</a></h4>
+                        <h4><a href="fotos.html">Goles</a></h4>
 
+                    </div>
                 </div>
-            </div>
             </div>
 
         </nav>
@@ -42,44 +42,47 @@
         </div>
     </div><!--Fin del título-->
 
-    <section>
-        <h2>Video destacado</h2>
-        <div class="video">
+    <section class="container">
+        <div class="row">
+            <h2>Video destacado</h2>
+            <div class=" video">
 
-            <iframe width="800" height="415" src="https://www.youtube.com/embed/ZnT1YgQo2nA?si=7Yq4oBxrQ0aQY2Hy"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe class="col-11 col-md-8" width="800" height="415"
+                    src="https://www.youtube.com/embed/ZnT1YgQo2nA?si=7Yq4oBxrQ0aQY2Hy" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-        </div>
-        <div class="descrip">
-            <h3>"El Gol del Siglo" - Maradona (1986)</h3>
-            <p>
-                En el Mundial de México 1986, Diego Maradona dejó al mundo boquiabierto
-                al marcar uno de los mejores goles de la historia, driblando a 5 jugadores ingleses
-                antes de anotar. Un momento inmortal del fútbol.
-            </p>
-        </div>
+
+                <div class="descrip">
+                    <h3>"El Gol del Siglo" - Maradona (1986)</h3>
+                    <p>
+                        En el Mundial de México 1986, Diego Maradona dejó al mundo boquiabierto
+                        al marcar uno de los mejores goles de la historia, driblando a 5 jugadores ingleses
+                        antes de anotar. Un momento inmortal del fútbol.
+                    </p>
+                </div>
+            </div>
     </section>
     <h2 class="title-section">Sumérgete en el pasado</h2>
     <div class="cards">
 
         <div class="card1">
 
-            <img src="partidos.jpg" width="400px" height="300px">
+            <img src="partidos.jpg" alt="partido" width="400px" height="300px">
             <h5>Partidos memorables</h5>
             <p>Revive los enfrentamientos más épicos que definieron campeonatos y generaciones.</p>
             <a href="" class="btn">Ver más</a>
         </div>
         <div class="card2">
-            <img src="jugadores.png" width="400px" height="300px">
+            <img src="jugadores.png" alt="jugadores" width="400px" height="300px">
             <h5>Jugadores legendarios</h5>
             <p>Conoce a los jugadores que dejaron huella en la historia del fútbol mundial.</p>
             <a href="" class="btn ">Explorar</a>
         </div>
 
         <div class="card3">
-            <img src="goles.jpeg" width="400px" height="300px">
+            <img src="goles.jpeg" alt="goles" width="400px" height="300px">
             <h5>Goles Icónicos</h5>
             <p>Descubre los goles que hicieron vibrar al mundo y quedarán para siempre en la memoria.</p>
             <a href="" class="btn ">Ver video </a>
@@ -100,9 +103,9 @@
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <img id="logoAbajo" src="papanoel.png" width="300"><br>
+                    <img id="logoAbajo" alt="papa" src="papanoel.png" width="300"><br>
 
-                    <div class="ms-2">
+                    <div class="ms-5">
                         <a href="https://www.instagram.com/futbolvintage88/" target="_blank">
                             <img src="instagram.png" width="50" id="inst" alt="Instagram">
                         </a>
@@ -129,8 +132,25 @@
                     <p>FaQs</p>
                 </div>
             </div>
+            <div class="col-12 text-center mt-3" style="margin-left: 80px;">
+                <button class="btn btn-success" onclick="openFeedback()">Danos tu feedback</button>
+            </div>
         </div>
     </footer>
+    <script>
+        function openFeedback(){
+            let ventana=window.open('','feedback','width=600,height=400,top=200,left=650');
+
+            
+                ventana.document.open();
+
+                ventana.document.write('<h1>Hola mundo</h1>');
+                ventana.document.close();
+         
+
+        }
+
+    </script>
 </body>
 
 </html>
