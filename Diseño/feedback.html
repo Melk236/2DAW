@@ -6,38 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
+  
+        .container{
+            font-family: 'Arial', sans-serif;
+            
             display: grid;
             justify-content: center;
             align-content: center;
-
+            margin:20px auto ;
+            background: #f9f4e7;
+            max-width: 600px;
+           padding-bottom: 20px;
+           border-radius: 12px;
+           box-shadow:0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .container{
+        .texto{
             text-align: center;
         }
+        h3{
+            font-size: 25px;
+        }
+        input,select{
+            padding: 10px;
+            border-color: bisque;
+            border-radius: 4px;
+        }
+        textarea{
+            border-color:bisque;
+            border-radius: 4px;
+        }
+       button{
+        padding: 10px;
+        background-color: #5b4636;
+        color: white;
+        cursor: pointer;
+        transition: background 3s ease;
+        border-radius: 4px;
+       }
+       button:hover{
+        background-color: #85674c;
+       }
     </style>
 </head>
 
 <body>
-    <div class="container">
+   <div class="container">
+    <div class="texto">
         <h3>¡Tu opinión nos importa!</h3>
         <p>Ayúdanos a mejorar la accesibilidad y experiencia de nuestro sitio web.</p>
     </div>
-    <label>Nombre(opcional):</label><br>
+    <label><strong>Nombre (opcional):</strong></label><br>
     <input type="text" placeholder="Escribe tu nombre..."><br>
-    <label>Correo electrónico</label><br>
-    <input type="text" placeholder="Tu correo electrónico..."><br>
-    <label>Tu opinión:</label><br>
-    <textarea placeholder="Cuénatanos tu experiencia..."></textarea><br>
-    <label>Califica tu experiencia</label><br>
+    <label><strong>Correo electrónico</strong></label><br>
+    <input type="text"  placeholder="Tu correo electrónico..."><br>
+    <label><strong>Tu opinión:</strong></label><br>
+    <textarea placeholder="Cuéntanos tu experiencia..." rows="5"></textarea><br>
+    <label><strong>Califica tu experiencia</strong></label><br>
     <select>
         <option>Excelente</option>
         <option>Buena</option>
         <option>Aceptable</option>
         <option>Deficiente</option>
-        <option>Muy deficiente</option>
+        <>Muy deficiente</<option>
     </select><br>
-    <button type="button">Enviar</button>
+    <button id="boton" type="button" onclick="funcion()">Enviar</button>
+
+    <script>
+
+        function funcion(){
+            document.write('<h1>Actualmente en desarrollo, perdón por las molestias</h1>');
+        }
+    </script>
+</div>
 
 </body>
 

@@ -139,13 +139,13 @@
     </footer>
     <script>
         function openFeedback(){
-            let ventana=window.open('','feedback','width=600,height=400,top=200,left=650');
-
+            let alto=window.innerHeight/2;
+            let ancho=window.innerWidth/12;
+           
+            let ventana=window.open('feedback.html','feedback','width=600,height=400,top='+ancho+',left='+alto);
+           
             
-                ventana.document.open();
-
-                ventana.document.write('<h1>Hola mundo</h1>');
-                ventana.document.close();
+                
          
 
         }
