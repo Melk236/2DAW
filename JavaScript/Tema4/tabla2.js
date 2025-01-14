@@ -26,7 +26,7 @@ function disGrosor(){
     let tabla=document.getElementById('tabla1');
     let grosor=tabla.getAttribute('border');
     grosor=Number(grosor);
-    tabla=document.getElementsByTagName('tabla1');
+    
     
     grosor-=1;
 
