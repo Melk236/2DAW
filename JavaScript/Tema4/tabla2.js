@@ -8,28 +8,30 @@ function comGrosor(){
 }
 
 function auGrosor(){
+    
     let tabla=document.getElementById('tabla1');
 
-    let grosor=tabla.style.borderWidth;
-    grosor=grosor.replace('px','');
- 
+    let grosor=tabla.getAttribute('border');
     grosor=Number(grosor);
-    grosor+=1;
- 
-    tabla.style.borderWidth=grosor;
    
+    grosor+=1;
+    
+    
+    tabla.setAttribute('border',grosor);
+      
 }
 
 function disGrosor(){
 
     let tabla=document.getElementById('tabla1');
-
-    let grosor=tabla.style.borderWidth;
-    grosor=grosor.replace('px','');
- 
+    let grosor=tabla.getAttribute('border');
     grosor=Number(grosor);
+    tabla=document.getElementsByTagName('tabla1');
+    
     grosor-=1;
- 
-    tabla.style.borderWidth=grosor;
-   
+
+    
+    tabla.setAttribute('border',grosor);
+    
+    
 }
