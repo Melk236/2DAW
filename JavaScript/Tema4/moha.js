@@ -7,6 +7,8 @@ window.onload = () => {
     let color4 = document.getElementsByClassName('color4')[0];
     let color5 = document.getElementsByClassName('color5')[0];
     let color6 = document.getElementsByClassName('color6')[0];
+    let colorDefinitivo;
+    let estilo;
 
     let tabla = document.createElement('table');
     let fila;
@@ -41,6 +43,9 @@ window.onload = () => {
         color4.classList.remove('seleccionado');
         color6.classList.remove('seleccionado');
         color5.classList.remove('seleccionado');
+        colorDefinitivo = document.getElementsByClassName('seleccionado')[0];
+
+        estilo = window.getComputedStyle(colorDefinitivo);
 
     });
 
@@ -52,6 +57,9 @@ window.onload = () => {
         color4.classList.remove('seleccionado');
         color6.classList.remove('seleccionado');
         color5.classList.remove('seleccionado');
+        colorDefinitivo = document.getElementsByClassName('seleccionado')[0];
+
+        estilo = window.getComputedStyle(colorDefinitivo);
 
     });
 
@@ -63,6 +71,9 @@ window.onload = () => {
         color4.classList.remove('seleccionado');
         color6.classList.remove('seleccionado');
         color5.classList.remove('seleccionado');
+        colorDefinitivo = document.getElementsByClassName('seleccionado')[0];
+
+        estilo = window.getComputedStyle(colorDefinitivo);
 
     });
     color4.addEventListener('click', () => {
@@ -73,6 +84,9 @@ window.onload = () => {
         color2.classList.remove('seleccionado');
         color6.classList.remove('seleccionado');
         color5.classList.remove('seleccionado');
+        colorDefinitivo = document.getElementsByClassName('seleccionado')[0];
+
+        estilo = window.getComputedStyle(colorDefinitivo);
 
     });
     color5.addEventListener('click', () => {
@@ -83,6 +97,9 @@ window.onload = () => {
         color2.classList.remove('seleccionado');
         color4.classList.remove('seleccionado');
         color6.classList.remove('seleccionado');
+        colorDefinitivo = document.getElementsByClassName('seleccionado')[0];
+
+        estilo = window.getComputedStyle(colorDefinitivo);
 
     });
     color6.addEventListener('click', () => {
@@ -93,19 +110,18 @@ window.onload = () => {
         color2.classList.remove('seleccionado');
         color4.classList.remove('seleccionado');
         color5.classList.remove('seleccionado');
+        colorDefinitivo = document.getElementsByClassName('seleccionado')[0];
+
+        estilo = window.getComputedStyle(colorDefinitivo);
 
     });
-    let colorDefinitivo = document.getElementsByClassName('seleccionado')[0];
-
-    let estilo = window.getComputedStyle(colorDefinitivo);
+  
 
 
     columnas = document.getElementsByClassName('col');
     let activo = true;
     tabla.addEventListener('click', () => {
-        function cambiarColor(event){
-            columnas[i].style.backgroundColor = estilo.backgroundColor;
-        }
+       
         if (activo) {
             for (let i = 0; i < columnas.length; i++) {
                 columnas[i].addEventListener('mouseover', cambiarColor);
@@ -117,11 +133,14 @@ window.onload = () => {
             for (let i = 0; i < columnas.length; i++) {
                 columnas[i].removeEventListener('mouseover', cambiarColor);
             }
+            activo=true;
         }
 
 
     });
-
+    function cambiarColor(event){
+        event.target.style.backgroundColor = estilo.backgroundColor;
+    }
 
 };
 
