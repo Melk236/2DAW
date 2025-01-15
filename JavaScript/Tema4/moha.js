@@ -95,7 +95,7 @@ window.onload = () => {
         
     });
     
-    columnas.addEventListener('mouseover',()=>{
+    columnas.addEventListener('click',()=>{
 
         columnas.style.backgroundColor='yellow';
  
