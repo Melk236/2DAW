@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Pulsa el botón para<button onclick="add()">añadir</button> o <button onclick="delet()">eliminar</button></p>
+
+    <ol>
+        <li>Primer dato</li>
+        <li>Segundo dato</li>
+        <li>tercer dato</li>
+        <li>cuarto dato</li>
+    </ol>
+
+
+    <script>
+        function add() {
+            let palabra;
+            do {
+                palabra = prompt('Introduzca una palabra');
+            } while (palabra == '');
+
+            let lista = document.getElementsByTagName('ol')
+            let elemento = document.createElement('li');
+            let texto = document.createTextNode(palabra);
+
+            elemento.appendChild(texto);
+            lista[0].appendChild(elemento);
+
+
+        }
+
+        function delet() {
+            let lista = document.getElementsByTagName('ol');
+
+            if (lista[0].children.length > 1) {
+
+                if ((lista[0].children.length) % 2 == 0) {
+                    let elemento = lista[0].children[lista[0].children.length - 1];
+                    elemento.parentNode.removeChild(elemento);
+                }
+                else {
+                    let elemento = lista[0].children[lista[0].children.length - 2];
+                    elemento.parentNode.removeChild(elemento);
+                }
+
+            }
+            else {
+                alert('No hay más elementos que eliminar');
+            }
+
+
+
+        }
+
+    </script>
+</body>
+
+</html>
