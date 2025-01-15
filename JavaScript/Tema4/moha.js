@@ -7,19 +7,20 @@ window.onload = () => {
     let color4 = document.getElementsByClassName('color4')[0];
     let color5 = document.getElementsByClassName('color5')[0];
     let color6 = document.getElementsByClassName('color6')[0];
-    
+
     let tabla = document.createElement('table');
     let fila;
     let columnas
     tabla.style.border = '1px solid black';
 
     for (let i = 0; i < 30; i++) {
-       fila = document.createElement('tr');
+        fila = document.createElement('tr');
         tabla.appendChild(fila);
 
         for (let j = 0; j < 30; j++) {
 
-             columnas = document.createElement('td');
+            columnas = document.createElement('td');
+            columnas.classList.add('col');
             fila.appendChild(columnas);
             columnas.style.border = '1px solid black';
             columnas.style.width = '10px';
@@ -30,10 +31,10 @@ window.onload = () => {
     }
 
     let contenedor = document.getElementById('zonadibujo');
-    let pincel=document.getElementById('pincel');
+    let pincel = document.getElementById('pincel');
     contenedor.appendChild(tabla);
     color1.addEventListener('click', () => {
-        pincel.innerHTML='Pincel: Color Amarillo';
+        pincel.innerHTML = 'Pincel: Color Amarillo';
         color1.classList.toggle('seleccionado');
         color2.classList.remove('seleccionado');
         color3.classList.remove('seleccionado');
@@ -44,7 +45,7 @@ window.onload = () => {
     });
 
     color2.addEventListener('click', () => {
-        pincel.innerHTML='Pincel: Color Verde';
+        pincel.innerHTML = 'Pincel: Color Verde';
         color2.classList.toggle('seleccionado');
         color1.classList.remove('seleccionado');
         color3.classList.remove('seleccionado');
@@ -55,7 +56,7 @@ window.onload = () => {
     });
 
     color3.addEventListener('click', () => {
-        pincel.innerHTML='Pincel: Color Negro';
+        pincel.innerHTML = 'Pincel: Color Negro';
         color3.classList.toggle('seleccionado');
         color1.classList.remove('seleccionado');
         color2.classList.remove('seleccionado');
@@ -65,7 +66,7 @@ window.onload = () => {
 
     });
     color4.addEventListener('click', () => {
-        pincel.innerHTML='Pincel: Color Rojo';
+        pincel.innerHTML = 'Pincel: Color Rojo';
         color4.classList.toggle('seleccionado');
         color1.classList.remove('seleccionado');
         color3.classList.remove('seleccionado');
@@ -75,34 +76,53 @@ window.onload = () => {
 
     });
     color5.addEventListener('click', () => {
-        pincel.innerHTML='Pincel: Color Azul';
+        pincel.innerHTML = 'Pincel: Color Azul';
         color5.classList.toggle('seleccionado');
         color1.classList.remove('seleccionado');
         color3.classList.remove('seleccionado');
         color2.classList.remove('seleccionado');
         color4.classList.remove('seleccionado');
         color6.classList.remove('seleccionado');
-        
+
     });
     color6.addEventListener('click', () => {
-        pincel.innerHTML='Pincel: Color Blanco';
+        pincel.innerHTML = 'Pincel: Color Blanco';
         color6.classList.toggle('seleccionado');
         color1.classList.remove('seleccionado');
         color3.classList.remove('seleccionado');
         color2.classList.remove('seleccionado');
         color4.classList.remove('seleccionado');
         color5.classList.remove('seleccionado');
-        
-    });
-    
-    columnas.addEventListener('click',()=>{
 
-        columnas.style.backgroundColor='yellow';
- 
- 
-     });
-    
-    
+    });
+    let colorDefinitivo = document.getElementsByClassName('seleccionado')[0];
+
+    let estilo = window.getComputedStyle(colorDefinitivo);
+
+
+    columnas = document.getElementsByClassName('col');
+    let activo = true;
+    tabla.addEventListener('click', () => {
+        function cambiarColor(event){
+            columnas[i].style.backgroundColor = estilo.backgroundColor;
+        }
+        if (activo) {
+            for (let i = 0; i < columnas.length; i++) {
+                columnas[i].addEventListener('mouseover', cambiarColor);
+            }
+
+            activo=false;
+        }
+        else {
+            for (let i = 0; i < columnas.length; i++) {
+                columnas[i].removeEventListener('mouseover', cambiarColor);
+            }
+        }
+
+
+    });
+
+
 };
 
 
