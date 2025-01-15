@@ -94,13 +94,14 @@ window.onload = () => {
         color5.classList.remove('seleccionado');
         
     });
+    
+    columnas.addEventListener('mouseover',()=>{
 
-    td.addEventListener('mouseover',()=>{
-
-       td.style.color=color1;
-
-
-    });
+        columnas.style.backgroundColor='yellow';
+ 
+ 
+     });
+    
     
 };
 
