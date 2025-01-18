@@ -287,3 +287,7 @@ img{
     outline: none;          
     border: 2px solid #007bff;
 }
+.carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: #f39c12;  /* Color personalizado (naranja) */
+    }
