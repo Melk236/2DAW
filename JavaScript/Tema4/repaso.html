@@ -8,50 +8,39 @@
 </head>
 
 <body>
-    <p id="parrafo1">Texto a agrandar, reducir o dejar de forma original</p>
-    <button type="submit" onclick="modificarTexto('aumentar',0.5)">Agrandar</button>
-    <button type="submit" onclick="modificarTexto('reducir',0.5)">Reducir</button>
-    <button type="submit" onclick="modificarTexto('original',0.5)">Original</button>
-
+    <h3>Pulsa el botón para<button type="button" onclick="add()">Añadir</button> o <button type="button" onclick="eliminar()">eliminar</button> un elemento a la lista</h3>
+    <ol>
+        <li>Primer dato</li>
+        <li>Tercer dato</li>
+        <li>Cuarto dato</li>
+    </ol>
     <script>
+        let lista=document.getElementsByTagName('ol');
+        function add(){
+            let cad;
+            do{
+             cad=prompt('Introduca un nuevo elemento');
+            }while(cad=='');
+
+            let elemento=document.createElement('li');
+
+            let cont=document.createTextNode(cad);
+
+            elemento.appendChild(cont);
+            lista[0].appendChild(elemento);
 
 
-        let original = document.getElementById('parrafo1');
-        let contador = 0;
-        let tamOriginal;
-
-        function modificarTexto(forma, tam) {
-            let tamano = window.getComputedStyle(original);
-            tamano = tamano.fontSize;
-            tamano = tamano.replace('px', '');
-            tamano = Number(tamano);
-            if (contador == 0) {
-                 tamOriginal = tamano;
-                contador++;
-            }
-
-
-
-            switch (forma) {
-                case 'aumentar':
-                    tamano = tamano + tam;
-
-
-                    original.style.fontSize = tamano + 'px';
-                    break;
-
-                case 'reducir':
-                    tamano = tamano - tam;
-                    original.style.fontSize = tamano + 'px';
-                    break;
-
-                case 'original':
-                    
-                    original.style.fontSize = tamOriginal + 'px';
-                    break;
-
-            }
         }
+        function eliminar(){
+           if(lista[0].children.length%2==0){
+            lista[0].removeChild(lista[0].children[lista[0].children.length-1]);
+           }
+           else{
+            lista[0].removeChild(lista[0].children[lista[0].children.length-2]);
+           }
+        }
+
+       
     </script>
 </body>
 
