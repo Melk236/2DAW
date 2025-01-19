@@ -1,20 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <p>Hola mundo</p>
+    <p id="parrafo1">Texto a agrandar, reducir o dejar de forma original</p>
+    <button type="submit" onclick="modificarTexto('aumentar',0.5)">Agrandar</button>
+    <button type="submit" onclick="modificarTexto('reducir',0.5)">Reducir</button>
+    <button type="submit" onclick="modificarTexto('original',0.5)">Original</button>
+
     <script>
-        let parrafo=document.getElementsByTagName('p');
 
-        parrafo[0].addEventListener('mouseover',()=>{
-          
-            parrafo[0].innerHTML=parrafo[0].innerHTML.toUpperCase();
 
-        });
+        let original = document.getElementById('parrafo1');
+        let contador = 0;
+        let tamOriginal;
+
+        function modificarTexto(forma, tam) {
+            let tamano = window.getComputedStyle(original);
+            tamano = tamano.fontSize;
+            tamano = tamano.replace('px', '');
+            tamano = Number(tamano);
+            if (contador == 0) {
+                 tamOriginal = tamano;
+                contador++;
+            }
+
+
+
+            switch (forma) {
+                case 'aumentar':
+                    tamano = tamano + tam;
+
+
+                    original.style.fontSize = tamano + 'px';
+                    break;
+
+                case 'reducir':
+                    tamano = tamano - tam;
+                    original.style.fontSize = tamano + 'px';
+                    break;
+
+                case 'original':
+                    
+                    original.style.fontSize = tamOriginal + 'px';
+                    break;
+
+            }
+        }
     </script>
 </body>
+
 </html>

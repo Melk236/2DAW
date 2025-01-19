@@ -2,36 +2,35 @@ function comGrosor(){
 
     let tabla=document.getElementById('tabla1');
 
-    let estilo=window.getComputedStyle(tabla);
-    
-    document.getElementById('parrafo').innerHTML='El grosor es '+estilo.borderWidth;
+    let borde=tabla.getAttribute('border');
+
+    document.getElementById('parrafo').innerHTML=borde;
+  
 }
 
 function auGrosor(){
-    
     let tabla=document.getElementById('tabla1');
+   let borde=tabla.getAttribute('border');
 
-    let grosor=tabla.getAttribute('border');
-    grosor=Number(grosor);
-   
-    grosor+=1;
-    
-    
-    tabla.setAttribute('border',grosor);
+   borde=Number(borde);
+   borde+=1;
+
+   tabla.setAttribute('border',borde);
       
 }
 
 function disGrosor(){
 
     let tabla=document.getElementById('tabla1');
-    let grosor=tabla.getAttribute('border');
-    grosor=Number(grosor);
-    
-    
-    grosor-=1;
+    let borde=tabla.getAttribute('border');
 
-    
-    tabla.setAttribute('border',grosor);
-    
+    borde=Number(borde);
+    borde-=1;
+    if(borde<1){
+        return;
+    }
+    else{
+    tabla.setAttribute('border',borde);
+    }
     
 }
