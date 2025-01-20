@@ -2,6 +2,7 @@ body{
 	display: grid;
 	justify-content: center;
 	align-content: center;
+	
 }
 .tablerodibujo {
 	border-top-width: thin;
