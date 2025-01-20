@@ -11,7 +11,7 @@ window.onload = () => {
     let estilo;
     colorDefinitivo = document.getElementsByClassName('seleccionado')[0];
 
-        estilo = window.getComputedStyle(colorDefinitivo);
+    estilo = window.getComputedStyle(colorDefinitivo);
     let tabla = document.createElement('table');
     let fila;
     let columnas
@@ -36,7 +36,7 @@ window.onload = () => {
 
     let contenedor = document.getElementById('zonadibujo');
     let pincel = document.getElementById('pincel');
-    pincel.innerHTML='Pincel desactivado';
+    pincel.innerHTML = 'Pincel desactivado';
     contenedor.appendChild(tabla);
     color1.addEventListener('click', () => {
         pincel.innerHTML = 'Pincel: Color Amarillo';
@@ -53,7 +53,7 @@ window.onload = () => {
     });
 
     color2.addEventListener('click', () => {
-      
+
         color2.classList.toggle('seleccionado');
         color1.classList.remove('seleccionado');
         color3.classList.remove('seleccionado');
@@ -67,7 +67,7 @@ window.onload = () => {
     });
 
     color3.addEventListener('click', () => {
-       
+
         color3.classList.toggle('seleccionado');
         color1.classList.remove('seleccionado');
         color2.classList.remove('seleccionado');
@@ -80,7 +80,7 @@ window.onload = () => {
 
     });
     color4.addEventListener('click', () => {
-      
+
         color4.classList.toggle('seleccionado');
         color1.classList.remove('seleccionado');
         color3.classList.remove('seleccionado');
@@ -93,7 +93,7 @@ window.onload = () => {
 
     });
     color5.addEventListener('click', () => {
-       
+
         color5.classList.toggle('seleccionado');
         color1.classList.remove('seleccionado');
         color3.classList.remove('seleccionado');
@@ -106,7 +106,7 @@ window.onload = () => {
 
     });
     color6.addEventListener('click', () => {
-        
+
         color6.classList.toggle('seleccionado');
         color1.classList.remove('seleccionado');
         color3.classList.remove('seleccionado');
@@ -118,32 +118,32 @@ window.onload = () => {
         estilo = window.getComputedStyle(colorDefinitivo);
 
     });
-  
+
 
 
     columnas = document.getElementsByClassName('col');
     let activo = true;
     tabla.addEventListener('click', () => {
-       
+        
         if (activo) {
             for (let i = 0; i < columnas.length; i++) {
                 columnas[i].addEventListener('mouseover', cambiarColor);
             }
 
-            activo=false;
+            activo = false;
         }
         else {
-            pincel.innerHTML='Pincel desactivado';
+            pincel.innerHTML = 'Pincel desactivado';
             for (let i = 0; i < columnas.length; i++) {
                 columnas[i].removeEventListener('mouseover', cambiarColor);
             }
-            activo=true;
+            activo = true;
         }
 
 
     });
-    function cambiarColor(event){
-        pincel.innerHTML='Pincel activado';
+    function cambiarColor(event) {
+        pincel.innerHTML = 'Pincel activado';
         event.target.style.backgroundColor = estilo.backgroundColor;
     }
 
