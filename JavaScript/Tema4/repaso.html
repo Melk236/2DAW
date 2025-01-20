@@ -8,13 +8,8 @@
     <link type="text/css" rel="stylesheet" href="Estilos_DWEC06_Tarea.css" />
     <script>
         window.onload = () => {
-            
-            let color1 = document.getElementsByClassName('color1')[0];
-            let color2 = document.getElementsByClassName('color2')[0];
-            let color3 = document.getElementsByClassName('color3')[0];
-            let color4 = document.getElementsByClassName('color4')[0];
-            let color5 = document.getElementsByClassName('color5')[0];
-            let color6 = document.getElementsByClassName('color6')[0];
+
+
 
             let tabla = document.createElement('table');
             tabla.style.border = 'solid 1px';
@@ -33,6 +28,66 @@
                 }
             }
             document.getElementById('zonadibujo').appendChild(tabla);
+
+            for (let i = 1; i < 7; i++) {
+                let color = document.getElementsByClassName('color' + i)[0];
+                color.addEventListener('click', () => {
+                    switch (i) {
+                        case 1:
+                            color.classList.toggle('seleccionado');
+                            document.getElementsByClassName('color2')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color3')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color4')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color5')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color6')[0].classList.remove('seleccionado');
+                            break;
+                        case 2:
+                            color.classList.toggle('seleccionado');
+                            document.getElementsByClassName('color3')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color4')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color5')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color6')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color1')[0].classList.remove('seleccionado');
+                            break;
+                        case 3:
+                            color.classList.toggle('seleccionado');
+                            document.getElementsByClassName('color4')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color5')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color6')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color1')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color2')[0].classList.remove('seleccionado');
+                            break;
+                        case 4:
+                            color.classList.toggle('seleccionado');
+                            document.getElementsByClassName('color5')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color6')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color1')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color2')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color3')[0].classList.remove('seleccionado');
+                            break;
+                        case 5:
+                        color.classList.toggle('seleccionado'); 
+                        document.getElementsByClassName('color6')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color1')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color2')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color3')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color4')[0].classList.remove('seleccionado');
+                            break;
+                        case 6:
+                        color.classList.toggle('seleccionado'); 
+                        document.getElementsByClassName('color1')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color2')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color3')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color4')[0].classList.remove('seleccionado');
+                            document.getElementsByClassName('color5')[0].classList.remove('seleccionado');
+
+                    }
+
+
+
+                });
+
+            }
         };
     </script>
 </head>
