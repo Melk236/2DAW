@@ -26,7 +26,7 @@ window.onload = () => {
             columnas = document.createElement('td');
             columnas.classList.add('col');
             fila.appendChild(columnas);
-            columnas.style.border = '1px solid black';
+            columnas.style.border = 'solid black';
             columnas.style.width = '10px';
             columnas.style.height = '10px';
         }

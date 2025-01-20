@@ -5,43 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="Estilos_DWEC06_Tarea.css" />
+    <script>
+        window.onload = () => {
+            
+            let color1 = document.getElementsByClassName('color1')[0];
+            let color2 = document.getElementsByClassName('color2')[0];
+            let color3 = document.getElementsByClassName('color3')[0];
+            let color4 = document.getElementsByClassName('color4')[0];
+            let color5 = document.getElementsByClassName('color5')[0];
+            let color6 = document.getElementsByClassName('color6')[0];
+
+            let tabla = document.createElement('table');
+            tabla.style.border = 'solid 1px';
+            let fila, columnas;
+            for (let i = 0; i < 30; i++) {
+                fila = document.createElement('tr');
+
+                tabla.appendChild(fila);
+                for (let j = 0; j < 30; j++) {
+                    columnas = document.createElement('td');
+                    columnas.style.border = 'solid';
+                    columnas.style.width = '10px';
+                    columnas.style.height = '10px';
+                    fila.appendChild(columnas);
+
+                }
+            }
+            document.getElementById('zonadibujo').appendChild(tabla);
+        };
+    </script>
 </head>
 
 <body>
-    <h3>Pulsa el botón para<button type="button" onclick="add()">Añadir</button> o <button type="button" onclick="eliminar()">eliminar</button> un elemento a la lista</h3>
-    <ol>
-        <li>Primer dato</li>
-        <li>Tercer dato</li>
-        <li>Cuarto dato</li>
-    </ol>
-    <script>
-        let lista=document.getElementsByTagName('ol');
-        function add(){
-            let cad;
-            do{
-             cad=prompt('Introduca un nuevo elemento');
-            }while(cad=='');
+    <p>TABLERO DE DIBUJO EN JAVASCRIPT</p>
+    <table width="500" border="1" id="paleta" summary="Tabla de selección de colores">
+        <caption>
+            Haga CLICK en un color para comenzar a pintar
+        </caption>
+        <tr>
+            <td class="color1 seleccionado"></td>
+            <td class="color2"></td>
+            <td class="color3"></td>
+            <td class="color4"></td>
+            <td class="color5"></td>
+            <td class="color6"></td>
+        </tr>
+        <tr>
+            <td colspan="6" id="pincel">Estado del pincel</td>
+        </tr>
+    </table>
+    <p></p>
+    <div id="zonadibujo"></div>
 
-            let elemento=document.createElement('li');
-
-            let cont=document.createTextNode(cad);
-
-            elemento.appendChild(cont);
-            lista[0].appendChild(elemento);
-
-
-        }
-        function eliminar(){
-           if(lista[0].children.length%2==0){
-            lista[0].removeChild(lista[0].children[lista[0].children.length-1]);
-           }
-           else{
-            lista[0].removeChild(lista[0].children[lista[0].children.length-2]);
-           }
-        }
-
-       
-    </script>
 </body>
 
 </html>
