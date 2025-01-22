@@ -12,6 +12,15 @@
 
 
             let tabla = document.createElement('table');
+            let color1 = document.getElementsByClassName('color1')[0];
+            let color2 = document.getElementsByClassName('color2')[0];
+            let color3 = document.getElementsByClassName('color3')[0];
+            let color4 = document.getElementsByClassName('color4')[0];
+            let color5 = document.getElementsByClassName('color5')[0];
+            let color6 = document.getElementsByClassName('color6')[0];
+
+
+
             tabla.style.border = 'solid 1px';
             let fila, columnas;
             for (let i = 0; i < 30; i++) {
@@ -29,64 +38,84 @@
             }
             document.getElementById('zonadibujo').appendChild(tabla);
 
-            for (let i = 1; i < 7; i++) {
-                let color = document.getElementsByClassName('color' + i)[0];
-                color.addEventListener('click', () => {
-                    switch (i) {
-                        case 1:
-                            color.classList.toggle('seleccionado');
-                            document.getElementsByClassName('color2')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color3')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color4')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color5')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color6')[0].classList.remove('seleccionado');
-                            break;
-                        case 2:
-                            color.classList.toggle('seleccionado');
-                            document.getElementsByClassName('color3')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color4')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color5')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color6')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color1')[0].classList.remove('seleccionado');
-                            break;
-                        case 3:
-                            color.classList.toggle('seleccionado');
-                            document.getElementsByClassName('color4')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color5')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color6')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color1')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color2')[0].classList.remove('seleccionado');
-                            break;
-                        case 4:
-                            color.classList.toggle('seleccionado');
-                            document.getElementsByClassName('color5')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color6')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color1')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color2')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color3')[0].classList.remove('seleccionado');
-                            break;
-                        case 5:
-                        color.classList.toggle('seleccionado'); 
-                        document.getElementsByClassName('color6')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color1')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color2')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color3')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color4')[0].classList.remove('seleccionado');
-                            break;
-                        case 6:
-                        color.classList.toggle('seleccionado'); 
-                        document.getElementsByClassName('color1')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color2')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color3')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color4')[0].classList.remove('seleccionado');
-                            document.getElementsByClassName('color5')[0].classList.remove('seleccionado');
+            color1.addEventListener('click', () => {
 
-                    }
+                color1.classList.toggle('seleccionado');
+                color2.classList.remove('seleccionado');
+                color3.classList.remove('seleccionado');
+                color4.classList.remove('seleccionado');
+                color5.classList.remove('seleccionado');
+                color6.classList.remove('seleccionado');
+            });
+            color2.addEventListener('click', () => {
 
+                color2.classList.toggle('seleccionado');
+                color3.classList.remove('seleccionado');
+                color4.classList.remove('seleccionado');
+                color5.classList.remove('seleccionado');
+                color6.classList.remove('seleccionado');
+                color1.classList.remove('seleccionado');
+            });
+            color3.addEventListener('click', () => {
 
+                color3.classList.toggle('seleccionado');
+                color1.classList.remove('seleccionado');
+                color2.classList.remove('seleccionado');
+                color4.classList.remove('seleccionado');
+                color5.classList.remove('seleccionado');
+                color6.classList.remove('seleccionado');
+            });
+            color4.addEventListener('click', () => {
 
-                });
+                color4.classList.toggle('seleccionado');
+                color1.classList.remove('seleccionado');
+                color2.classList.remove('seleccionado');
+                color3.classList.remove('seleccionado');
+                color5.classList.remove('seleccionado');
+                color6.classList.remove('seleccionado');
+            });
+            color5.addEventListener('click', () => {
 
+                color5.classList.toggle('seleccionado');
+                color1.classList.remove('seleccionado');
+                color2.classList.remove('seleccionado');
+                color3.classList.remove('seleccionado');
+                color4.classList.remove('seleccionado');
+                color6.classList.remove('seleccionado');
+            });
+            color6.addEventListener('click', () => {
+
+                color6.classList.toggle('seleccionado');
+                color1.classList.remove('seleccionado');
+                color2.classList.remove('seleccionado');
+                color3.classList.remove('seleccionado');
+                color4.classList.remove('seleccionado');
+                color5.classList.remove('seleccionado');
+            });
+
+            let celdas=document.getElementsByTagName('td');
+            let colorDef=document.getElementsByClassName('seleccionado')[0];
+            let bol=true;
+            for(let i=0;i<celdas.length;i++){
+                if(bol){
+                celdas[i].addEventListener('click',pintar);
+                bol=false;
+                }
+                else{
+                celdas[i].removeEventListener('click',pintar);
+                bol=true;
+                }
+            }
+
+            function pintar(event){
+                let estilo=window.getComputedStyle(colorDef);
+                for(let i=0;i<celdas.length;i++){
+                    celdas[i].addEventListener('mouseover',()=>{
+
+                        celdas[i].style.backgroundColor=estilo.backgroundColor;
+                    });
+                }
+               
             }
         };
     </script>
