@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Enviar</button>
+    <button>Borrar</button>
+    <p></p>
+    <script>
+
+        let boton = document.getElementsByTagName('button')[0];
+        let p = document.getElementsByTagName('p')[0];
+        let boton2 = document.getElementsByTagName('button')[1];
+
+        function click(){
+            p.innerHTML='Has click en el boton';
+        }
+        function encima(){
+            p.innerHTML='Estas encima del boton';
+        }
+        boton.addEventListener('click', click);
+        boton.addEventListener('mouseover', encima);
+      
+        boton2.addEventListener('click', () => {
+            boton.removeEventListener('click',click);
+            boton.removeEventListener('mouseover',encima);
+            
+        });
+
+        
+       
+    </script>
+</body>
+
+</html>

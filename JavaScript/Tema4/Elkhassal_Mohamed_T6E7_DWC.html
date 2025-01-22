@@ -1,0 +1,42 @@
+<html>
+
+<head>
+   <title>
+      P&aacute;gina con Javascript.
+   </title>
+   <script language="javascript">
+      window.onload=()=>{
+      let tabla = document.createElement('table');
+      tabla.style.border='1px solid';
+      tabla.style.width='200px'
+      let fila,columna;
+      document.getElementsByTagName('button')[0].addEventListener('click', () => {
+         fila = document.createElement('tr');
+         fila.style.border='1px solid';
+         for(let i=0;i<10;i++){
+            columna=document.createElement('td');
+            columna.style.border='1px solid';
+            columna.style.width='20px';
+            columna.style.height='20px'
+            fila.appendChild(columna);
+         }
+         tabla.appendChild(fila);
+         document.body.appendChild(tabla);
+      });
+      document.getElementsByTagName('button')[1].addEventListener('click', () => {
+         tabla.removeChild(fila);
+         fila=document.getElementsByTagName('tr');
+         fila=fila[fila.length-1];
+      });
+
+   };
+   </script>
+</head>
+
+<body>
+   <button type="button">Agregar fila a la tabla</button>
+   <button type="button">Eliminar fila de la tabla</button>
+   <br><br>
+</body>
+
+</html>
