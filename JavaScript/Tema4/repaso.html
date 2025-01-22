@@ -29,6 +29,7 @@
                 tabla.appendChild(fila);
                 for (let j = 0; j < 30; j++) {
                     columnas = document.createElement('td');
+                    columnas.setAttribute('class', 'col');
                     columnas.style.border = 'solid';
                     columnas.style.width = '10px';
                     columnas.style.height = '10px';
@@ -93,29 +94,32 @@
                 color5.classList.remove('seleccionado');
             });
 
-            let celdas=document.getElementsByTagName('td');
-            let colorDef=document.getElementsByClassName('seleccionado')[0];
-            let bol=true;
-            for(let i=0;i<celdas.length;i++){
-                if(bol){
-                celdas[i].addEventListener('click',pintar);
-                bol=false;
-                }
-                else{
-                celdas[i].removeEventListener('click',pintar);
-                bol=true;
-                }
+            let celdas = document.getElementsByClassName('col');
+            let colorDef = document.getElementsByClassName('seleccionado')[0];
+            let bol = true;
+
+            for (let i = 0; i < celdas.length; i++) {
+
+                celdas[i].addEventListener('click', pintar);
+
             }
 
-            function pintar(event){
-                let estilo=window.getComputedStyle(colorDef);
-                for(let i=0;i<celdas.length;i++){
-                    celdas[i].addEventListener('mouseover',()=>{
+            function pintar(event) {
+                let estilo = window.getComputedStyle(colorDef);
+                if (bol) {
+                    for (let i = 0; i < celdas.length; i++) {
+                        celdas[i].addEventListener('mouseover', () => {
 
-                        celdas[i].style.backgroundColor=estilo.backgroundColor;
-                    });
+                            celdas[i].style.backgroundColor = estilo.backgroundColor;
+                        });
+                    }
+                    bol=false;
                 }
-               
+                else{
+                    for (let i = 0; i < celdas.length; i++) {
+                        celdas[i].removeEventListener('mouseover',pintar);
+                    }
+                }
             }
         };
     </script>
