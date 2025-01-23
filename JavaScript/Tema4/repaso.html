@@ -50,7 +50,7 @@
             });
             color2.addEventListener('click', () => {
 
-                color2.classList.toggle('seleccionado');
+                color2.classList.add('seleccionado');
                 color3.classList.remove('seleccionado');
                 color4.classList.remove('seleccionado');
                 color5.classList.remove('seleccionado');
@@ -59,7 +59,7 @@
             });
             color3.addEventListener('click', () => {
 
-                color3.classList.toggle('seleccionado');
+                color3.classList.add('seleccionado');
                 color1.classList.remove('seleccionado');
                 color2.classList.remove('seleccionado');
                 color4.classList.remove('seleccionado');
@@ -68,7 +68,7 @@
             });
             color4.addEventListener('click', () => {
 
-                color4.classList.toggle('seleccionado');
+                color4.classList.add('seleccionado');
                 color1.classList.remove('seleccionado');
                 color2.classList.remove('seleccionado');
                 color3.classList.remove('seleccionado');
@@ -77,7 +77,7 @@
             });
             color5.addEventListener('click', () => {
 
-                color5.classList.toggle('seleccionado');
+                color5.classList.add('seleccionado');
                 color1.classList.remove('seleccionado');
                 color2.classList.remove('seleccionado');
                 color3.classList.remove('seleccionado');
@@ -86,7 +86,7 @@
             });
             color6.addEventListener('click', () => {
 
-                color6.classList.toggle('seleccionado');
+                color6.classList.add('seleccionado');
                 color1.classList.remove('seleccionado');
                 color2.classList.remove('seleccionado');
                 color3.classList.remove('seleccionado');
@@ -95,7 +95,7 @@
             });
 
             let celdas = document.getElementsByClassName('col');
-            let colorDef = document.getElementsByClassName('seleccionado')[0];
+            let colorDef;
             let bol = true;
 
             for (let i = 0; i < celdas.length; i++) {
@@ -103,9 +103,11 @@
                 celdas[i].addEventListener('click', pintar);
 
             }
-
+            let estilo;
             function pintar(event) {
-                let estilo = window.getComputedStyle(colorDef);
+               colorDef=document.getElementsByClassName('seleccionado')[0];;
+                 estilo = window.getComputedStyle(colorDef);
+                 alert(estilo.backgroundColor);
                 if (bol) {
                     for (let i = 0; i < celdas.length; i++) {
                         celdas[i].addEventListener('mouseover', () => {
@@ -116,6 +118,7 @@
                     bol=false;
                 }
                 else{
+
                     for (let i = 0; i < celdas.length; i++) {
                         celdas[i].removeEventListener('mouseover',pintar);
                     }
