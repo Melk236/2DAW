@@ -17,7 +17,7 @@ header{
 header h4{
 
     font-family:'Fuente2';
-    color:white;
+    color:black;
     
 }
 section{
@@ -30,7 +30,7 @@ section{
     text-align: center;
     
     gap: 25px;
-    width:1000px;
+    max-width:800px;
     border: solid;
     margin: 0 auto;
     border-radius: 10px; 
@@ -73,10 +73,10 @@ h4{/*Cuando se hayan visitado vuelven a su color y estilo predeterminado */
    
   font-size: 30px;
   border: solid;
-  border-color: white;
-  background-color: black;
+  border-color: black;
+ border-radius: 8px;
   padding: 9px;
-  
+  border-color: black;
   
 }
 h4:hover{
