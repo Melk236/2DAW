@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JSON, ejemplo de animales</h2>
+    <p id="razas"></p>
+    <button type="button" onclick="abrir()">Mostrar animales</button>
+    <script>
+        function abrir(){
+        var xhttp=new XMLHttpRequest();
+
+        xhttp.onreadystatechange=function(){
+            if(this.readyState==4 && this.status==200){
+
+                var listaWebs=JSON.parse(this.responseText);
+                getWebs(listaWebs);
+            }
+        };
+        xhttp.open('GET','animales.json','true');
+        xhttp.send();
+        function getWebs(array){
+            let cad='';
+            for(let i=0;i<array.length;i++){
+                cad+=array[i]+' ';
+            }
+            document.getElementById('razas').innerHTML=cad;
+        }
+    }
+    </script>
+</body>
+</html>
