@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Formulario datos</h2>
+
+    <form>
+        <label><strong>Nombre Tarea:</strong></label>
+        <input type="text" id="tarea"><br><br>
+
+        <label><strong>Descripción:</strong></label>
+        <input type="text" id="descripcion"><br><br>
+
+        <label><strong>Importancia:</strong></label>
+        <select id="select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select><br><br>
+        <label><strong>Duración estimada:</strong></label>
+        <input type="number" id="duración" min="5" max="120"><br><br>
+        <button onclick="almacenar()">Almacenar</button>
+    </form>
+    <div id="tabla">
+
+    </div>
+    <script src="examen.js"></script>
+</body>
+</html>

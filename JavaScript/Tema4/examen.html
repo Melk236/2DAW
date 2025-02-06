@@ -7,16 +7,17 @@
 </head>
 <body>
     <h2>Agenda para el examen</h2>
-    <form  method="post">
+    <form >
         <label><strong>Usuario:</strong></label>
         <input type="text" id="nombre"><br><br>
 
         <label><strong>Contraseña:</strong></label>
-        <input type="text">
+        <input type="password">
         <br><br>
-        <button type="button" onclick="enviar()">Enviar</button>
+        <button type="button" id="boton">Enviar</button>
 
     </form>
-
+    <p id="error" style="color:red;"></p>
+<script src="examen.js"></script>
 </body>
 </html>
