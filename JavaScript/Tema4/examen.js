@@ -13,7 +13,7 @@ let boton=document.getElementById('boton');
             let contenedor=document.getElementById('tabla');
             let tabla=document.createElement('table');
             tabla.appendChild(contendor);
-            let columna=d
+            let columna=d;
 
 
             }
