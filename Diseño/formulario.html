@@ -11,23 +11,26 @@
 </head>
 
 <body>
-  <nav class="navbar bg-success-subtle"><!--Inicio de barra de navegación-->
+  <nav class="navbar"><!--Inicio de barra de navegación-->
     <div class="container d-flex">
       <a class="navbar-brand" href="#">
         <img src="1.png" alt="Bootstrap" width="240" height="150">
       </a>
       <div class="d-flex gap-5 nav">
         <ul class="d-flex gap-5">
-        <li><a href="index1.html">Inicio</a></li>
-        <li><a href="fotos.html">Fotos</a></li>
-        <li><a href="formulario.html">Formulario</a></li>
-      </ul>
+          <li><a href="index1.html">Inicio</a></li>
+          <li><a href="fotos.html">Fotos</a></li>
+          <li><a href="formulario.html">Formulario</a></li>
+        </ul>
       </div>
     </div>
   </nav><!-- Fin de la barra de navaegación -->
-  <div class="container d-flex align-items-center justify-content-center vh-100 "><!--Comienzo del formulario junto con la imagen-->
-   
-    <section class="col-12 col-md-6 col-lg-5  form">
+ 
+  <div class="container-fluid fondo d-flex align-items-center justify-content-center vh-100 ">
+    <!--Comienzo del formulario junto con la imagen-->
+    <h1>Bienvenido a la página de videos de fútbol </h1>
+    <p>Disfruta de los mejores momentos del fútbol mundial:goles, resumenes y más</p>
+    <section class="col-6 col-xs-6 col-md-6 col-lg-5  form">
       <h2 class="text-center">INICIAR SESIÓN</h2>
       <form class="row">
 
@@ -49,12 +52,71 @@
             <option value="3">Other</option>
           </select>
         </div>
-        
-        <button type="submit" class="btn  w-75 ms-5" >Enviar</button>
+
+        <button type="submit" class="btn  w-75 ms-5">Enviar</button>
         <p>¿No tienes cuenta? <span>Registrate aquí</span></p>
       </form>
     </section><!--Fin del formulario-->
-  
+  </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-5 mt-5">
+          <p>Legal Warning</p>
+          <p>Privacy Policy</p>
+          <p>Cookies Policy</p>
+          <p>Quality Policy</p>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <img id="logoAbajo" alt="papa" src="paz.png" width="300"><br>
+
+          <div class="ms-5">
+            <a href="https://www.instagram.com/futbolvintage88/" target="_blank">
+              <img src="instagram.png" width="50" id="inst" alt="Instagram">
+            </a>
+
+            <a href="https://www.facebook.com/futbolvintage88" target="_blank">
+              <img src="tiktok.png" width="50" id="fac" alt="Facebook">
+            </a>
+
+            <a href="https://x.com/FVintage8812588" target="_blank">
+              <img src="x.png" width="60" id="x" alt="X">
+            </a>
+
+            <a href="https://wa.me/1234567890" target="_blank">
+              <img src="whatssap.png" width="50" id="what" alt="WhatsApp">
+            </a>
+
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3 mt-5">
+          <p>TOrrago</p>
+          <p>Blog</p>
+          <p onclick="openFeedback()" style="cursor: pointer; ">Contact</p>
+          <p>FaQs</p>
+
+        </div>
+
+        <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title"
+            rel="cc:attributionURL" href="https://futboteca.com">Página web</a> by
+          <span property="cc:attributionName">Mohamed el Khassal</span> is licensed under <a
+            href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank"
+            rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0<img
+              style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+              src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img
+              style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+              src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img
+              style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+              src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img
+              style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+              src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" alt=""></a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
 </body>
 
 </html>
