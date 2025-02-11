@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datos>
+    <persona>
+        <nombre>Juan Perez</nombre>
+        <edad>30</edad>
+        <correo>juan.perez@example.com</correo>
+    </persona>
+    <persona>
+        <nombre>Maria Gomez</nombre>
+        <edad>25</edad>
+        <correo>maria.gomez@example.com</correo>
+    </persona>
+</datos>
