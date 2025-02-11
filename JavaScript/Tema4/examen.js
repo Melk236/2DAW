@@ -158,7 +158,3 @@ function borrar(){
     }
 
 }
-
-
-
-
