@@ -36,7 +36,7 @@ function almacenar() {
             agregarCelda(fila, 'Descripción');
             agregarCelda(fila, 'Importancia');
             agregarCelda(fila, 'Duración estimada');
-
+            agregarCelda(fila,'Realizado');
             validar = true;
             let form = document.getElementById('form');
             fila = document.createElement('tr');
@@ -47,6 +47,9 @@ function almacenar() {
                     agregarCelda(fila, form.elements[i].value);
                 }
             }
+            let realizar=document.createElement('input');
+            realizar.setAttribute('type','checkbox');
+            agregarCeldaCheck(fila,realizar);
         }
         else {
             let form = document.getElementById('form');
@@ -58,9 +61,13 @@ function almacenar() {
                     agregarCelda(fila, form.elements[i].value);
                 }
             }
-            validar=false;
+            let realizar=document.createElement('input');
+            realizar.setAttribute('type','checkbox');
+            agregarCeldaCheck(fila,realizar);
+            
         }
     }
+
     else {
         if(validar==false){
             let contenedor=document.getElementById('tabla');
