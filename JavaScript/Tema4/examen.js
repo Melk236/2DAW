@@ -36,7 +36,7 @@ function almacenar() {
             agregarCelda(fila, 'Descripción');
             agregarCelda(fila, 'Importancia');
             agregarCelda(fila, 'Duración estimada');
-            agregarCelda(fila,'Realizado');
+
             validar = true;
             let form = document.getElementById('form');
             fila = document.createElement('tr');
@@ -47,9 +47,6 @@ function almacenar() {
                     agregarCelda(fila, form.elements[i].value);
                 }
             }
-            let realizar=document.createElement('input');
-            realizar.setAttribute('type','checkbox');
-            agregarCeldaCheck(fila,realizar);
         }
         else {
             let form = document.getElementById('form');
@@ -61,15 +58,19 @@ function almacenar() {
                     agregarCelda(fila, form.elements[i].value);
                 }
             }
-            let realizar=document.createElement('input');
-            realizar.setAttribute('type','checkbox');
-            agregarCeldaCheck(fila,realizar);
             
         }
     }
-
-    else {
+    
+    else {  
         if(validar==false){
+            let form=document.getElementById('form');
+             let boton=document.createElement('button');
+             let contenido=document.createTextNode('Borrar');
+             boton.appendChild(contenido);
+             boton.setAttribute('type','button');
+             boton.setAttribute('onclick','borrar()');
+             form.appendChild(boton);
             let contenedor=document.getElementById('tabla');
             tabla=document.createElement('table');
             contenedor.appendChild(tabla);
@@ -84,6 +85,24 @@ function almacenar() {
             agregarCelda(fila,'Realizado');
             agregarCelda(fila,'Borrar');
             validar=true;
+            fila=document.createElement('tr');
+            tabla.appendChild(fila);
+            for(let i=0;i<form.elements.length;i++){
+                if(form.elements[i].type!=='button'){
+                    agregarCelda(fila,form.elements[i].value);
+                }
+            }
+            
+            let realizar=document.createElement('input');
+            realizar.setAttribute('type','checkbox');
+           
+            agregarCeldaCheck(fila,realizar);
+             let borrar=document.createElement('input');
+            borrar.setAttribute('type','checkbox');
+            borrar.setAttribute('class','1');
+            agregarCeldaCheck(fila,borrar);
+            
+            
         }
         else{
             
@@ -158,3 +177,7 @@ function borrar(){
     }
 
 }
+
+
+
+

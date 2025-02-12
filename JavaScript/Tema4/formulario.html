@@ -4,6 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background: #f8f9fa;
+        }
+        h2{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+        #tabla{
+          
+            display: grid;
+            justify-content: center;
+            align-content: center;
+           
+
+        }
+        td{
+            background-color: gray;
+
+        }
+        th{
+            background-color: #007bff;
+        }
+        button{
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: background 0.3s;
+        }
+       form{
+        display: grid;
+        justify-content: center;
+        align-content: center;
+       }
+    </style>
 </head>
 <body>
     <h2>Formulario datos</h2>
@@ -26,7 +67,7 @@
         <label><strong>Duración estimada:</strong></label>
         <input type="number" id="duración" min="5" max="120"><br><br>
         <button type="button" onclick="almacenar()">Almacenar</button>
-        <button type="button" onclick="borrar()">Borrar</button>
+        
     </form>
     <br><br>
     <div id="tabla">
