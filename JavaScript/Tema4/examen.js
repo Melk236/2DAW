@@ -76,6 +76,7 @@ function almacenar() {
              let contenido=document.createTextNode('Borrar');
              boton.appendChild(contenido);
              boton.setAttribute('type','button');
+             boton.setAttribute('id','bor')
              boton.setAttribute('onclick','borrar()');
              form.appendChild(boton);
             let contenedor=document.getElementById('tabla');
