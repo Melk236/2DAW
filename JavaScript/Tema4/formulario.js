@@ -158,7 +158,7 @@ window.onload = () => {
   });
 
   // Confirmación al enviar datos
-  document.getElementById('enviar').addEventListener('onclick', () => {
+  document.getElementById('enviar').addEventListener('click', () => {
     confirm('¿Quiere enviar los datos proporcionados?');
   });
 };

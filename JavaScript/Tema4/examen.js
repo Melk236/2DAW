@@ -4,7 +4,7 @@ let tabla, validar = false, fila;
 
 function enviar() {
     let nombre = document.getElementById('nombre').value;
-    if (document.getElementById('nombre').value == 'usuario' || document.getElementById('nombre').value == 'administrador') {
+    if (document.getElementById('nombre').value == 'empleado' || document.getElementById('nombre').value == 'administrador') {
 
        
         localStorage.setItem('nombre', nombre);
@@ -23,7 +23,7 @@ function enviar() {
 function almacenar() {
     let nombre = localStorage.getItem('nombre');
 
-    if (nombre == 'usuario') {
+    if (nombre == 'empleado') {
         if (validar == false) {
             let contenedor = document.getElementById('tabla');
             tabla = document.createElement('table');
@@ -184,7 +184,3 @@ function borrar(){
     }
 
 }
-
-
-
-
