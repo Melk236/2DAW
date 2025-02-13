@@ -6,7 +6,7 @@ function enviar() {
     let nombre = document.getElementById('nombre').value;
     if (document.getElementById('nombre').value == 'usuario' || document.getElementById('nombre').value == 'administrador') {
 
-        alert(nombre);
+       
         localStorage.setItem('nombre', nombre);
         window.location.href = 'formulario.html';
 
@@ -36,7 +36,7 @@ function almacenar() {
             agregarCelda(fila, 'Descripción');
             agregarCelda(fila, 'Importancia');
             agregarCelda(fila, 'Duración estimada');
-
+            agregarCelda(fila,'Realizado');
             validar = true;
             let form = document.getElementById('form');
             fila = document.createElement('tr');
@@ -47,6 +47,10 @@ function almacenar() {
                     agregarCelda(fila, form.elements[i].value);
                 }
             }
+            let realizar=document.createElement('input');
+            realizar.setAttribute('type','checkbox');
+           
+            agregarCeldaCheck(fila,realizar);
         }
         else {
             let form = document.getElementById('form');
@@ -58,7 +62,10 @@ function almacenar() {
                     agregarCelda(fila, form.elements[i].value);
                 }
             }
-            
+            let realizar=document.createElement('input');
+            realizar.setAttribute('type','checkbox');
+           
+            agregarCeldaCheck(fila,realizar);
         }
     }
     
