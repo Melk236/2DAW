@@ -7,7 +7,7 @@
 
 </head>
 
-<body onLoad="crearNodos();">
+<body >
    <table align="center" width="300" border="2">
       <tr height="40">
          <th colspan="3" id="cabecera">Esto es la cabecera de la tabla.</th>
@@ -52,24 +52,24 @@
    </div>
 
    <script>
-
-      function cambiarTitulo() {
-         if (document.getElementById('cabecera').textContent == 'Esto es la cabecera de la tabla.') {
-            document.getElementById('cabecera').innerHTML = 'Tabla';
-
-            document.getElementById('boton').innerHTML = 'Restaurar cabecera';
+      function cambiarTitulo(){
+         let boton=document.getElementById('boton');
+         if(boton.textContent=='Restaurar cabecera'){
+            cabecera.innerHTML='Esto es la cabecera de la tabla.';
+            boton.innerHTML='Cambiar cabecera';
          }
-         else {
-            document.getElementById('cabecera').innerHTML = 'Esto es la cabecera de la tabla.';
-            document.getElementById('boton').innerHTML = 'Cambiar Cabecera';
+         else{
+         let titulo=prompt('Introduzca el titulo de la tabla');
+         let cabecera=document.getElementsByTagName('th')[0];
+         cabecera.textContent=titulo;
+         
+         boton.innerHTML='Restaurar cabecera';
          }
+
       }
 
 
-
    </script>
-
-
 
 </body>
 

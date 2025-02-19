@@ -5,15 +5,27 @@
       P&aacute;gina con Javascript.
    </title>
    <script language="javascript">
-      let imagen = document.getElementById('imagen');
-      function agregar() {
 
+      function crearNodo() {
+
+         let imagen = document.getElementById('imagen');
+         imagen.addEventListener('mouseover', () => {
+
+            let parrafo = document.getElementById('parrafo');
+            parrafo.innerHTML = imagen.getAttribute('title');
+
+         });
+
+      }
+      function agregar() {
+         let imagen = document.getElementById('imagen');
          imagen.setAttribute('title', 'hielo');
       }
       function eliminar() {
+         let imagen = document.getElementById('imagen');
          imagen.removeAttribute('title');
       }
-      
+
 
    </script>
 </head>
