@@ -8,17 +8,29 @@
       window.onload = () => {
          let boton = document.getElementsByTagName('button');
          let tabla = document.createElement('table');
+         let fila;
          tabla.style.border = '1px solid';
          document.body.appendChild(tabla);
          boton[0].addEventListener('click', () => {
-            let fila = document.createElement('tr');
+            fila = document.createElement('tr');
             tabla.appendChild(fila);
+            let celda=document.createElement('td');
+            
+            celda.style.border='1px solid';
+
+            fila.appendChild(celda);
+
+
+         });
+         boton[1].addEventListener('click',()=>{
+            let celdas=document.getElementsByTagName('tr');
+            celdas[celdas.length-1].parentNode.removeChild(celdas[celdas.length-1]);
 
          });
 
       };
    </script>
-   
+
 </head>
 
 <body>
