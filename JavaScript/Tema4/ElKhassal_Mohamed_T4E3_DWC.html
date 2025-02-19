@@ -1,20 +1,32 @@
 <html>
-   <head>
-      <title>
-         P&aacute;gina con Javascript.
-      </title>
-      <script language="javascript">
-        
-      </script>
-   </head>
-   <body onLoad="crearNodo();">
-      <p id="parrafo"></p>
-      <img id="imagen" src="iceberg.jpg" onmouseover="descrip()">
+
+<head>
+   <title>
+      P&aacute;gina con Javascript.
+   </title>
+   <script language="javascript">
+      let imagen = document.getElementById('imagen');
+      function agregar() {
+
+         imagen.setAttribute('title', 'hielo');
+      }
+      function eliminar() {
+         imagen.removeAttribute('title');
+      }
+      
+
+   </script>
+</head>
+
+<body onLoad="crearNodo();">
+   <p id="parrafo"></p>
+   <img id="imagen" src="iceberg.jpg" onmouseover="descrip()">
+   <br>
+   <form>
+      <input type="button" value="Agregar 'title' a la imagen" onClick="agregar();">
       <br>
-      <form>
-         <input type="button" value="Agregar 'title' a la imagen" onClick="agregar();">
-         <br>
-         <input type="button" value="Borrar 'title' de la imagen" onClick="eliminar();">
-      </form>
-   </body>
+      <input type="button" value="Borrar 'title' de la imagen" onClick="eliminar();">
+   </form>
+</body>
+
 </html>
