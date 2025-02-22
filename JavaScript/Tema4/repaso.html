@@ -5,13 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link type="text/css" rel="stylesheet" href="Estilos_DWEC06_Tarea.css" />
+    
     
 </head>
 
 <body>
-    
+    <p>Pulsa el botón para <button type="button" onclick="añadir()">añadir</button> o <button type="button" onclick="eliminar()">eliminar</button> un elemento de la lista </p>
+    <ol>
 
+    </ol>
+    <script>
+        function añadir(){
+            let p=document.getElementsByTagName('ol')[0];
+            let lista=document.createElement('li');
+            let contenido=prompt('Intrdoduzca la tarea');
+            contenido=document.createTextNode(contenido);
+            lista.appendChild(contenido);
+            p.appendChild(lista);
+        }
+        function eliminar(){
+            let lista=document.getElementsByTagName('li');
+
+            if(lista.length%2==0){
+                lista[lista.length-1].parentNode.removeChild(lista[lista.length-1]);
+            }
+            else{
+                lista[lista.length-2].parentNode.removeChild(lista[lista.length-2]); 
+            }
+
+        }
+    </script>
 </body>
 
 </html>
