@@ -4,8 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        form{
+            display: grid;
+            justify-content: center;
+            align-content: center;
+        }
+        h2{
+            text-align: center;
+        
+        }
+        button{
+            margin-top: 10px;
+        }
+
+        label{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-   
+   <h2>Gestión de tareas</h2>
+   <form id="form">
+    <label><strong>Tarea:</strong></label>
+    <input type="text">
+
+    <label><strong>Descripción:</strong></label>
+    <input type="text">
+
+    <label><strong>Importancia:</strong></label>
+    <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <label><strong>Duración:</strong></label>
+    <input type="number" min="1" max="120">
+
+    <button type="button" onclick="almacenar()">Enviar</button><br><br>
+   </form> 
+   <script src="examen.js"></script>
 </body>
 </html>
