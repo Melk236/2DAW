@@ -1,39 +1,144 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DWEC06 - SOLUCION TAREA</title>
+    <link type="text/css" rel="stylesheet" href="Estilos_DWEC06_Tarea.css" />
+
 </head>
 
 <body>
-    <p>Pulsa el botón para <button type="button" onclick="añadir()">añadir</button> o <button type="button" onclick="eliminar()">eliminar</button> un elemento de la lista </p>
-    <ol>
-
-    </ol>
+    <p>TABLERO DE DIBUJO EN JAVASCRIPT</p>
+    <table width="500" border="1" id="paleta" summary="Tabla de selección de colores">
+        <caption>
+            Haga CLICK en un color para comenzar a pintar
+        </caption>
+        <tr>
+            <td class="color1 seleccionado"></td>
+            <td class="color2"></td>
+            <td class="color3"></td>
+            <td class="color4"></td>
+            <td class="color5"></td>
+            <td class="color6"></td>
+        </tr>
+        <tr>
+            <td colspan="6" id="pincel">Estado del pincel</td>
+        </tr>
+    </table>
+    <p></p>
+    <div id="zonadibujo"></div>
     <script>
-        function añadir(){
-            let p=document.getElementsByTagName('ol')[0];
-            let lista=document.createElement('li');
-            let contenido=prompt('Intrdoduzca la tarea');
-            contenido=document.createTextNode(contenido);
-            lista.appendChild(contenido);
-            p.appendChild(lista);
-        }
-        function eliminar(){
-            let lista=document.getElementsByTagName('li');
+        window.onload = () => {
 
-            if(lista.length%2==0){
-                lista[lista.length-1].parentNode.removeChild(lista[lista.length-1]);
+            let tabla = document.createElement('table');
+            tabla.style.border = 'solid';
+            let color1 = document.getElementsByClassName('color1')[0];
+            let color2 = document.getElementsByClassName('color2')[0];
+            let color3 = document.getElementsByClassName('color3')[0];
+            let color4 = document.getElementsByClassName('color4')[0];
+            let color5 = document.getElementsByClassName('color5')[0];
+            let color6 = document.getElementsByClassName('color6')[0];
+
+            let fila, celda, validar = false;
+            let estado=document.getElementById('pincel');
+            for (let i = 0; i < 30; i++) {
+                fila = document.createElement('tr');
+                for (let j = 0; j < 30; j++) {
+                    celda = document.createElement('td');
+                    celda.setAttribute('class', 'pint');
+                    celda.style.border = 'solid black';
+                    celda.style.width = '10px';
+                    celda.style.height = '10px';
+                    celda.style.color = 'black';
+                    fila.appendChild(celda);
+                }
+                tabla.appendChild(fila);
             }
-            else{
-                lista[lista.length-2].parentNode.removeChild(lista[lista.length-2]); 
+
+            document.getElementById('zonadibujo').appendChild(tabla);
+            let selec = document.getElementsByClassName('seleccionado')[0];
+            color1.addEventListener('click', () => {
+                selec.classList.remove('seleccionado');
+                color1.classList.add('seleccionado');
+                selec = document.getElementsByClassName('seleccionado')[0];
+
+            });
+            color2.addEventListener('click', () => {
+                selec.classList.remove('seleccionado');
+                color2.classList.add('seleccionado');
+                selec = document.getElementsByClassName('seleccionado')[0];
+
+            });
+            color3.addEventListener('click', () => {
+                selec.classList.remove('seleccionado');
+                color3.classList.add('seleccionado');
+                selec = document.getElementsByClassName('seleccionado')[0];
+
+            });
+            color4.addEventListener('click', () => {
+                selec.classList.remove('seleccionado');
+                color4.classList.add('seleccionado');
+                selec = document.getElementsByClassName('seleccionado')[0];
+
+            });
+            color5.addEventListener('click', () => {
+                selec.classList.remove('seleccionado');
+                color5.classList.add('seleccionado');
+                selec = document.getElementsByClassName('seleccionado')[0];
+
+            });
+            color6.addEventListener('click', () => {
+                selec.classList.remove('seleccionado');
+                color6.classList.add('seleccionado');
+                selec = document.getElementsByClassName('seleccionado')[0];
+
+            });
+
+            celda = document.getElementsByClassName('pint');
+
+            for (let i = 0; i < celda.length; i++) {
+
+                celda[i].addEventListener('click', () => {
+                    if (validar == false) {
+                        estado.innerHTML='Pincel activo';
+                        for (let j = 0; j < celda.length; j++) {
+                            celda[j].addEventListener('mouseover', pintar);
+                        }
+                        validar=true;
+                    }
+                    else{
+                        estado.innerHTML='Pincel desactivado';
+                        for (let j = 0; j < celda.length; j++) {
+                            celda[j].removeEventListener('mouseover', pintar);
+                        }
+                        validar=false;
+                    }
+
+
+
+                });
+
+
+            }
+
+
+
+
+            function pintar() {
+
+                let estilos = window.getComputedStyle(selec);
+                this.style.backgroundColor = estilos.backgroundColor;
+
+
             }
 
         }
+
+
+
+
     </script>
 </body>
 
