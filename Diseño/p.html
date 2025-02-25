@@ -3,110 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fútbol Histórico - Red Social</title>
+    <title>FutbolSocial - Conecta con la pasión del fútbol</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        @font-face {
+            font-family: 'Fuente2';
+            src: url('Miguel\ De\ Northern.ttf');
+        }
+
+        :root {
+            --color-primary: #5b4636;
+            --color-secondary: #a67b5b;
+            --color-accent: #f39c12;
+            --color-background: #f5f3e9;
+            --color-text: #333333;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #f1f1f1, #d6bfa7);
-            margin: 0;
-            padding: 0;
-            color: #5b4636;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
         }
+
         .navbar {
-            background-color: #5b4636;
-            padding: 15px;
+            background: linear-gradient(to bottom, #2F4F4F, #FFFFFF);
+            padding: 1rem 0;
         }
-        .navbar a {
+
+        .navbar-brand img {
+            max-height: 60px;
+        }
+
+        .nav-link {
+            font-family: 'Fuente2', sans-serif;
+            color: var(--color-primary) !important;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-accent) !important;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(91, 70, 54, 0.7), rgba(91, 70, 54, 0.7)), url('https://source.unsplash.com/1600x900/?soccer,football') no-repeat center center;
+            background-size: cover;
             color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-        .card {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        .btn {
-            margin-right: 5px;
-            border-radius: 5px;
-        }
-        h2 {
-            color: #5b4636;
+            padding: 100px 0;
             text-align: center;
         }
-        form {
-            background: white;
-            padding: 20px;
+
+        h1, h2, h3 {
+            font-family: 'Fuente2', sans-serif;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-custom {
+            background-color: var(--color-accent);
+            color: white;
+            padding: 10px 30px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .feature-card {
+            background-color: white;
             border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--color-secondary);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--color-accent);
+            margin-bottom: 20px;
+        }
+
+        .cta-section {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 80px 0;
+        }
+
+        footer {
+            background: linear-gradient(to top, #2F4F4F, #FFFFFF);
+            color: var(--color-text);
+            padding: 40px 0;
+        }
+
+        .social-icons a {
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--color-accent);
+            transform: translateY(-3px);
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Fútbol Histórico</a>
-            <div class="collapse navbar-collapse">
+            <a class="navbar-brand" href="#">
+                <img src="paz.png" alt="FutbolSocial Logo" height="60">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#feed">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#perfil">Perfil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#subir">Subir Video</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#caracteristicas">Características</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#unete">Únete</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Feed de Videos -->
-    <section id="feed" class="container mt-4">
-        <h2>Videos Recientes</h2>
-        <div class="card">
-            <iframe width="100%" height="200" src="https://www.youtube.com/embed/ZnT1YgQo2nA" frameborder="0" allowfullscreen></iframe>
-            <div class="card-body">
-                <h5 class="card-title">El Gol del Siglo</h5>
-                <p class="card-text">Maradona 1986 - Mundial de México.</p>
-                <button class="btn btn-primary">❤️ Me gusta</button>
-                <button class="btn btn-secondary">💬 Comentar</button>
+    <header class="hero" id="inicio">
+        <div class="container">
+            <h1>Bienvenido a FutbolSocial</h1>
+            <p class="lead">Conecta con otros aficionados, comparte tus momentos favoritos y vive la pasión del fútbol</p>
+            <a href="#unete" class="btn btn-custom btn-lg">Únete Ahora</a>
+        </div>
+    </header>
+
+    <section class="py-5" id="caracteristicas">
+        <div class="container">
+            <h2 class="text-center mb-5">¿Por qué unirte a FutbolSocial?</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-video feature-icon"></i>
+                        <h3>Comparte Tus Videos</h3>
+                        <p>Sube y comparte tus mejores momentos futbolísticos con una comunidad apasionada.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-users feature-icon"></i>
+                        <h3>Conecta con Fans</h3>
+                        <p>Encuentra y conéctate con otros aficionados que comparten tu pasión por el fútbol.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-trophy feature-icon"></i>
+                        <h3>Revive la Historia</h3>
+                        <p>Accede a una amplia biblioteca de momentos históricos y partidos legendarios.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Perfil del Usuario -->
-    <section id="perfil" class="container mt-5">
-        <h2>Mi Perfil</h2>
-        <p>Bienvenido, [Nombre de Usuario]</p>
-        <h3>Mis Videos</h3>
-        <div class="card">
-            <iframe width="100%" height="200" src="https://www.youtube.com/embed/example" frameborder="0" allowfullscreen></iframe>
-            <div class="card-body">
-                <h5 class="card-title">Mi Video Subido</h5>
-                <button class="btn btn-danger">🗑 Eliminar</button>
-            </div>
+    <section class="cta-section" id="unete">
+        <div class="container text-center">
+            <h2 class="mb-4">¿Listo para unirte a la comunidad?</h2>
+            <p class="lead mb-4">Regístrate ahora y comienza a compartir tu pasión por el fútbol</p>
+            <a href="#" class="btn btn-custom btn-lg">Crear Cuenta Gratis</a>
         </div>
     </section>
 
-    <!-- Subir Video -->
-    <section id="subir" class="container mt-5">
-        <h2>Subir un Video</h2>
-        <form>
-            <div class="mb-3">
-                <label for="titulo" class="form-label">Título del Video</label>
-                <input type="text" class="form-control" id="titulo" required>
+    <footer id="contacto">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="paz.png" alt="FutbolSocial Logo" height="80" class="mb-3">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-end">
+                    <h4>Contacto</h4>
+                    <p>Email: info@futbolsocial.com</p>
+                    <p>Teléfono: +34 123 456 789</p>
+                    <p>Dirección: Calle del Fútbol, 123, 28001 Madrid, España</p>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="url" class="form-label">URL de YouTube</label>
-                <input type="url" class="form-control" id="url" required>
-            </div>
-            <button type="submit" class="btn btn-success">📤 Subir</button>
-        </form>
-    </section>
+            <hr>
+            <p class="text-center">&copy; 2024 FutbolSocial. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
