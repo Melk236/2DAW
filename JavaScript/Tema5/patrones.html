@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let cad='@ssw0cd!';
+        let patron=/^([a-z]|[A-Z]|[0-9]|[@#$%^&+=!]){1}([a-z]|[A-Z]|[0-9]|[@#$%^&+=!]){7,}$/;
+
+        if(patron.test(cad)){
+            document.write('Se cumple el patrón');
+        }
+        else{
+            document.write('No se cumple el patrón');
+        }
+    </script>
+</body>
+</html>
