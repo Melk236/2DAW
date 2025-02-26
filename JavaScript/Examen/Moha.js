@@ -1,108 +1,102 @@
-let v1, v2, v3, v4;
-var fecha = new Date();
-var usuario = {
-    us: 'alumno',
-    contraseña: 'bueno'
+//Creamos variables globlaes parra acceder a los input y despues modificar el DOM
+let nombre=document.getElementById('nombre');
+let apellidos=document.getElementById('ap');
+let codigo=document.getElementById('cod');
+let boton=document.createElement('button');
+let botA;
 
-};
-const array = [];//Variable globales para poder operer con el array y la fecha
+function validar(){
+    //Creamos los dos patrones para validar el nombre,apellidos y la contraseña
+    let patron=/^[a-zA-Z]+$/;
+    let patronCod=/^([A-Z]{1}[0-9]{4}|[0-9]{4}[A-Z]{1})$/;
+    let error=document.getElementById('errores');
+    error.innerHTML='';
+    alert(patronCod.test(codigo.value));//Con el .test se valida los patrones
+    if(!patron.test(nombre.value) || !patron.test(apellidos.value)|| !patronCod.test(codigo.value)){
+        error.innerHTML='Error,nombre o apellidos incorrectos ';
+        
+    }
+    else{
+        error.innerHTML='Formulario enviado correctamente';
+    }
 
-function ventana1() {
-    // Abrir la nueva ventana
-    v1 = window.open("", "ventana", "width=300,height=300");
 
-    // Asignar el evento onload para cambiar el color y añadir el contenido
-    v1.onload = function() {
-        // Cambiar el color de fondo de la ventana
-        v1.document.body.style.backgroundColor = 'green';
-        
-        // Insertar contenido en la ventana
-        var validar = 'Hola';
-        
-        // Usamos innerHTML solo una vez para evitar sobrescribir todo el contenido
-        v1.document.body.innerHTML = validar + '<br>';
-        
-        // Añadimos los nuevos elementos sin sobrescribir el contenido anterior
-        v1.document.body.innerHTML += '<label> Nueva Contraseña</label>';
-        v1.document.body.innerHTML += '<input type="text"></input>';
-    };
 }
-
-
-
-
-function ventana2() {
-    //En la ventana 2 se crea el array con eltamaño de 6 a 9 con el random
-    v2 = window.open("", "", "width=300,height=300,left=0,top=1000");
-
-    var n = document.getElementById('select').value;//Los valores que va acontener el array
-    var v = Math.floor(Math.random() * 9);
-
-    var mayor;
-    var menor;
-    if (v < 6) {
-        v = 6;
-    }
-
-
-    for (let i = 0; i < v; i++) {
-        array[i] = Math.floor(Math.random() * n);
-
-    }
-    mayor = array[0];
-
-    menor = array[0];
-    //Con este bucle para saber cual es el menor y cual es el mayor
-    for (let i = 0; i < array.length; i++) {
-        if (mayor < array[i]) {
-            mayor = array[i];
-
-        }
-        if (menor > array[i]) {
-            menor = array[i];
-
-        }
-
-    }
-    var array2 = [];
-    //Rellenamos el array con el valor mas pequeño al mas grande
-    for (let i = menor; i <= mayor; i++) {
-        array2[i] = i;
-
-    }
-
-    v2.document.body.innerHTML = 'El array: ' + array.toString() + '<br>';
-    v2.document.body.innerHTML += 'Desde el menor al mayor: ' + array2.toString();
-    //Se muestra en la ventana
-}
-function ventana3() {
-    v3 = window.open("", "", "width=300,height=300,left=2000,top=0");
-    var array2 = [];
-    var j = 0;
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] % 2 != 0) {//Condicion para saber si el numero es par o impar
-            array2[j] = array[i];
-            j++;
+function validar2(){//En la segunda funcion validamos el segundo formulario
+     usuario=document.getElementById('usuario').value;
+     clave=document.getElementById('clave').value;
+    let p=document.getElementById('error');
+    let patron=/^[A-Z]$/;
+    let cl;
+    cl=codigo.value.split('');//Covertimos el codigo en un array
+    
+    for(let i=0;i<cl.length;i++){//Eliminamos la letra
+        if(patron.test(cl[i])){
+            cl.splice(i,i+1);
+            
         }
     }
+    cl=cl.join('',codigo);//Volvemos a convertilo a string
+    p.innerHTML='';
+    if(usuario=='Admin' && clave==cl){//Validamos el formulario
+        p.innerHTML='Usuario y clave correctas';
+       
+        let contenido=document.createTextNode('Cambiar a inglés');
+        boton.appendChild(contenido);
+        document.body.appendChild(boton);
+        boton.setAttribute('onclick','cambiarIdioma()');//Creamos los botones de cambio de idioma y salir del administrador
+         botA=document.createElement('button');
+     contenido=document.createTextNode('Salir modo administrador');
+     botA.setAttribute('onclick','salir()');//Le creamos el atributo onclick para que cuando pulsemos entramos a la función
+    botA.appendChild(contenido);
+    document.body.appendChild(botA);
+    }
+    else{
+        p.innerHTML='Inténtalo de nuevo';//Le ponemos un mensaje de error
+       
+    }
+    setTimeout(salir,5000);//Si el usuario no pulsa el boton de salir se sale en 5 segundos
+    
+}
+function cambiarIdioma(){
+    
+   
+    if(boton.textContent=='Cambiar a inglés'){//Para el idioma cogemos el valor del boton y comprobamos enq ue idioma estamos
+        let label=document.getElementsByTagName('label');
+        let bot=document.getElementsByTagName('button');
+        bot[0].innerHTML='Sent';
+        bot[1].innerHTML='Sent';
+        label[0].innerHTML='Name';
+        label[1].innerHTML='Last name';
+        label[2].innerHTML='Password';
+        label[3].innerHTML='Administrator';
+        label[4].innerHTML='Code';
+        boton.innerHTML='Cambiar a español';//Cambiamos el valor del botón para poder ir cambiando de idioma
+    
+    }
+    else if(boton.textContent=='Cambiar a español'){
+        let label=document.getElementsByTagName('label');
+        let bot=document.getElementsByTagName('button');
+        bot[0].innerHTML='Enviar';
+        bot[1].innerHTML='Enviar';
+        label[0].innerHTML='Nombre';
+        label[1].innerHTML='Apellidos';
+        label[2].innerHTML='Contraseña';
+        label[3].innerHTML='Usuario administrador';
+        label[4].innerHTML='Clave de acceso';
+        boton.innerHTML='Cambiar a inglés';
 
-    v3.document.body.innerHTML = 'Los numeros impares son: ' + array2.toString();
+    }
+   
+    
+
 }
-function ventana4() {
-    //En este método se muestra la contraseña  actual del usario y la fecha de la ultima modificaicon
-    v4 = window.open("", "", "width=300,height=300,left=2000,top=1000");
-    v4.document.body.innerHTML = 'La contraseña del usuario es: ' + usuario.contraseña;
-    v4.document.body.innerHTML += 'La ultima vez cambiada la fecha es: ' + fecha;
-}
-function cerrar1() {
-    v1.close();
-}
-function cerrar2() {
-    v2.close();
-}
-function cerrar3() {
-    v3.close();
-}
-function cerrar4() {
-    v4.close();
+function salir(){
+    let p=document.getElementById('error');
+    p.innerHTML='';
+    
+    botA.parentNode.removeChild(botA);//Eliminanos los botones con el nodo padre
+    boton.parentNode.removeChild(boton);
+
+
 }
