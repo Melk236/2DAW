@@ -1,0 +1,9 @@
+@if(!isLoginOrRegister()){
+<app-navBar></app-navBar>
+}
+<main>
+    <router-outlet></router-outlet>
+</main>
+@if(!isLoginOrRegister()){
+    <app-footer></app-footer>
+}

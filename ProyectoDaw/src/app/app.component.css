@@ -1,0 +1,40 @@
+/* Estilo para el botón */
+
+button {
+    background-color: transparent;
+    color: #e8e0d0;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: rgba(155, 126, 75, 0.2);
+    color: #9b7e4b; /* Color de texto al hacer hover */
+  }
+  
+  /* Estilo para el avatar */
+  .avatar img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+  
+  /* Sombra para el avatar */
+  .avatar img:hover {
+    box-shadow: 0 0 5px rgba(155, 126, 75, 0.6);
+  }
+  
+ 
+  
+  /* Foco en los inputs */
+  input:focus {
+    outline: none;
+    border: 2px solid #9b7e4b; /* Borde cuando el input está enfocado */
+    box-shadow: 0 0 0 2px rgba(155, 126, 75, 0.2); /* Efecto de sombra */
+  }
+  
+  input::placeholder {
+    color: rgba(232, 224, 208, 0.5); /* Color del placeholder */
+  }

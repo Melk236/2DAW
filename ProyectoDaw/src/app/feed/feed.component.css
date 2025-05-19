@@ -1,0 +1,229 @@
+:root {
+  --primary-color: #9b7e4b;
+  --primary-hover: rgba(155, 126, 75, 0.2);
+  --text-color: #e8e0d0;
+  --text-secondary: rgba(232, 224, 208, 0.7);
+  --bg-dark: #0c0a06;
+  --bg-card: rgba(20, 16, 12, 0.5);
+  --border-color: rgba(155, 126, 75, 0.2);
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-color);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+.sidebar {
+  background-color: var(--bg-card);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  position: sticky;
+  top: 24px;
+}
+
+.sidebar h3 {
+  font-weight: bold;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.sidebar li a {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.sidebar li a:hover {
+  background-color: var(--primary-hover);
+}
+
+.video-card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
+.video-info {
+  padding: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+}
+
+.video-stats {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  align-items: center;
+}
+
+.video-stats span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #86703f;
+  color: var(--text-color);
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-color);
+  width: 100%;
+}
+
+.sort-btn {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-color);
+  font-size: 0.875rem;
+}
+
+.sort-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+hr {
+  border-color: rgba(232, 224, 208, 0.1);
+  margin: 0.5rem 0;
+}
+
+.video-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+  color: var(--text-color);
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.recommended-thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 0.25rem;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.recommended-link:hover .recommended-thumb {
+  transform: scale(1.05);
+}
+
+.popular-user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.load-more {
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.recommended-title {
+  font-weight: 500;
+  font-size: 0.875rem;
+  overflow: hidden;
+  display: -webkit-box;
+  
+  -webkit-box-orient: vertical;
+}
+
+.view-count {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+.user-info span {
+  font-size: 0.875rem;
+}
+
+.user-info small {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    position: relative;
+    top: 0;
+  }
+}
+/* Agregar a feed.component.css */
+.video-container {
+  position: relative;
+  width: 100%;
+  border-radius: 0.3rem 0.3rem 0 0;
+  overflow: hidden;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 10;
+  cursor: pointer;
+  /* Transparente para que se vea el video debajo */
+  background-color: transparent;
+}

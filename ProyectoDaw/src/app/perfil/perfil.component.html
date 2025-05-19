@@ -1,0 +1,207 @@
+<div class="profile-container">
+    <!-- Banner y avatar -->
+    <div class="profile-header position-relative mb-5">
+        <!-- Banner -->
+        <div class="banner-container">
+            <div class="banner-overlay"></div>
+            <img src="https://placehold.co/1200x400/14100c/e8e0d0" alt="Banner de perfil" class="banner-image">
+        </div>
+
+        <!-- Avatar -->
+        <div class="avatar-container">
+            <div class="avatar-wrapper">
+                <img src="https://placehold.co/200x200/9b7e4b/e8e0d0" alt="Avatar de usuario" class="avatar-image">
+                <div class="avatar-status"></div>
+            </div>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="profile-actions">
+            <button class="btn btn-outline-secondary btn-share">
+                <i class="bi bi-share"></i> Compartir
+            </button>
+            <button class="btn btn-primary btn-follow">Seguir</button>
+        </div>
+    </div>
+
+    <!-- Información del perfil -->
+    <div class="profile-info container">
+        <h1 class="profile-name">{{usuario.nombreUsuario}}</h1>
+        <p class="profile-username">{{'@'+usuario.nombreUsuario}}</p>
+
+        <p class="profile-bio">
+            Futbolista profesional. Capitán de la selección argentina. Campeón del mundo 2022. 8 veces ganador del Balón
+            de Oro.
+        </p>
+
+        <div class="profile-metadata">
+
+            <div class="metadata-item">
+                <i class="bi bi-calendar3"></i>
+                <span>Se unió en {{unirse()}}</span>
+            </div>
+        </div>
+
+        <div class="profile-stats">
+            <div class="stat-item">
+                <span class="stat-value">458</span> Siguiendo
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">492M</span> Seguidores
+            </div>
+        </div>
+    </div>
+
+    <!-- Pestañas -->
+    <div class="profile-tabs container mt-4">
+        <ul class="nav nav-tabs" id="profileTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="liked-tab" data-bs-toggle="tab" data-bs-target="#liked"
+                    type="button" role="tab" aria-controls="liked" aria-selected="true">
+                    Videos que le gustan
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="uploaded-tab" data-bs-toggle="tab" data-bs-target="#uploaded" type="button"
+                    role="tab" aria-controls="uploaded" aria-selected="false">
+                    Videos subidos
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="profileTabsContent">
+            <!-- Videos que le gustan -->
+            <div class="tab-pane fade show active animate-fade-in" id="liked" role="tabpanel"
+                aria-labelledby="liked-tab">
+                <div class="row g-4 mt-3">
+                    @for(video of infoCard;track video.id){
+                    <div class="col-md-6">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <iframe class="rounded-top-3 w-100" height="200" [src]="sanitizeUrl(video.url)"
+                                    title="YouTube video player" frameborder="0" allowfullscreen>
+                                </iframe>
+                                
+                            </div>
+                            <div class="video-content">
+                                <div class="video-category">
+                                    <span class="category-badge">{{video.categoria}}</span>
+                                </div>
+                                <h3 class="video-title">{{video.descripcion}}</h3>
+                                <div class="video-stats">
+                                    <div class="stat">
+                                        <i class="bi bi-heart"></i>
+                                        <span>{{video.likes}}</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="bi bi-chat"></i>
+                                        <span>3.2k</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="bi bi-eye"></i>
+                                        <span>{{video.vistas}}</span>
+                                    </div>
+                                    <div class="stat date">{{video.fechaSubida | date:'dd-yy-YYYY'}}</div>
+                                </div>
+                                <hr>
+                                <div class="video-channel">
+                                    <img src="https://placehold.co/40x40/9b7e4b/e8e0d0" alt="Channel"
+                                        class="channel-avatar">
+                                    <span class="channel-name">Futboteca</span>
+                                    <button class="btn-bookmark">
+                                        <i class="bi bi-bookmark"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+
+                </div>
+            </div>
+
+            <!-- Videos subidos -->
+            <div class="tab-pane fade animate-fade-in" id="uploaded" role="tabpanel" aria-labelledby="uploaded-tab">
+                <div class="row g-4 mt-3">
+                    <!-- Video Card 1 -->
+                    <div class="col-md-6">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://placehold.co/600x340/14100c/e8e0d0" alt="Thumbnail" class="img-fluid">
+                                <div class="play-overlay">
+                                    <i class="bi bi-play-circle-fill"></i>
+                                </div>
+                            </div>
+                            <div class="video-content">
+                                <div class="video-category">
+                                    <span class="category-badge">Análisis táctico</span>
+                                </div>
+                                <h3 class="video-title">Mi gol favorito de todos los tiempos - Análisis</h3>
+                                <div class="video-stats">
+                                    <div class="stat">
+                                        <i class="bi bi-heart"></i>
+                                        <span>128k</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="bi bi-chat"></i>
+                                        <span>8.5k</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="bi bi-eye"></i>
+                                        <span>3.7M</span>
+                                    </div>
+                                    <div class="stat date">15/07/2023</div>
+                                </div>
+                                <hr>
+                                <div class="video-channel">
+                                    <img src="https://placehold.co/40x40/9b7e4b/e8e0d0" alt="Channel"
+                                        class="channel-avatar">
+                                    <span class="channel-name">Lionel Messi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 2 -->
+                    <div class="col-md-6">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://placehold.co/600x340/14100c/e8e0d0" alt="Thumbnail" class="img-fluid">
+                                <div class="play-overlay">
+                                    <i class="bi bi-play-circle-fill"></i>
+                                </div>
+                            </div>
+                            <div class="video-content">
+                                <div class="video-category">
+                                    <span class="category-badge">Entrenamiento</span>
+                                </div>
+                                <h3 class="video-title">Técnicas de tiro libre - Tutorial completo</h3>
+                                <div class="video-stats">
+                                    <div class="stat">
+                                        <i class="bi bi-heart"></i>
+                                        <span>95k</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="bi bi-chat"></i>
+                                        <span>6.2k</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="bi bi-eye"></i>
+                                        <span>2.9M</span>
+                                    </div>
+                                    <div class="stat date">28/08/2023</div>
+                                </div>
+                                <hr>
+                                <div class="video-channel">
+                                    <img src="https://placehold.co/40x40/9b7e4b/e8e0d0" alt="Channel"
+                                        class="channel-avatar">
+                                    <span class="channel-name">Lionel Messi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

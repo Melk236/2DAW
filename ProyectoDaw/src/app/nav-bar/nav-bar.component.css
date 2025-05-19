@@ -1,0 +1,28 @@
+/* Estilo general para el header */
+header {
+    background: linear-gradient(to bottom, #1e1a13, #2c2417);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(155, 126, 75, 0.3);
+    color: #e8e0d0; /* Color del texto */
+  }
+  
+  /* Estilo para los enlaces dentro del header */
+  header a {
+    text-decoration: none; /* Quitar subrayado */
+    color: inherit; /* Usar el color del texto heredado */
+    font-weight: 500; /* Peso de fuente medio */
+    font-size: 1rem; /* Tamaño de fuente */
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+  }
+  
+  /* Hover sobre los enlaces */
+  header a:hover {
+    color: #9b7e4b; /* Color al hacer hover */
+    background-color: rgba(155, 126, 75, 0.2); /* Fondo al hacer hover */
+    border-radius: 0.375rem; /* Bordes redondeados */
+  }
+  
+  
+  

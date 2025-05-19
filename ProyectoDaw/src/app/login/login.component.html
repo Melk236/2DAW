@@ -1,0 +1,151 @@
+@if(alert){
+<div class="fixed-top alert-container animate__animated animate__fadeInDown"
+  style="top: 20px; left: 50%; transform: translateX(-50%); z-index: 1050; width: auto; max-width: 490px;">
+  <div class="alert fade show d-flex align-items-center px-3 py-2" role="alert"
+    style="background-color: rgba(163, 110, 77, 0.9); border: 1px solid #a36e4d; border-radius: 6px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); font-family: var(--font-primary); color: #f6ebd7; backdrop-filter: blur(5px);">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#f6ebd7"
+      class="me-2 animate__animated animate__heartBeat animate__delay-1s">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+    </svg>
+    <span class="text-white" style="font-family: var(--font-primary); letter-spacing: 0.01em;">Usuario o contraseña
+      inválidos</span>
+    <button type="button" class="btn-close btn-close-white ms-auto" (click)="cerrarAlerta()"
+      style="opacity: 0.7;"></button>
+  </div>
+</div>
+}
+
+<!-- Botón para volver al home con efecto hover -->
+<div class="position-fixed top-4 start-4 home-button-container">
+  <a href="/" class="btn home-button animate__animated animate__fadeIn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#9b7e4b" class="home-icon">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+    </svg>
+  </a>
+</div>
+
+<!-- Elementos decorativos del fútbol -->
+<div class="decorative-elements">
+  <div class="ball ball-1"></div>
+  <div class="ball ball-2"></div>
+  <div class="golden-line"></div>
+</div>
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100" style="margin-top: 120px;">
+
+  <div class="card-login w-100 animate__animated animate__fadeIn animate__delay-05s shadow-lg" style="max-width: 500px;">
+    <!-- Logo decorativo -->
+    <div class="text-center mb-4 position-relative">
+      <div class="trophy-icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#9b7e4b" class="trophy-icon mb-3">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3v2m0 4h.01M9 17h.01" />
+        </svg>
+        <div class="trophy-shine"></div>
+      </div>
+      <h2 class="fw-bold mb-2 animate__animated animate__fadeInDown animate__delay-1s">Iniciar Sesión</h2>
+      <p class="text-muted-custom animate__animated animate__fadeIn animate__delay-15s">Revive los momentos más legendarios del fútbol</p>
+    </div>
+    <!-- Línea decorativa -->
+    <div class="divider-fancy mb-4"></div>
+
+    <form [formGroup]="formulario" (ngSubmit)="inicioSesion()" class="animate__animated animate__fadeInUp animate__delay-1s">
+      <!-- Email -->
+      <div class="mb-4 form-group-hover">
+        <label for="email" class="form-label fw-medium d-flex align-items-center text-light">
+          <i class="bi bi-person me-2 icon-animate" style="color: #9b7e4b;"></i>Usuario
+        </label>
+        <div class="input-group input-group-with-hover">
+          <input formControlName="nombreUsuario" type="email" class="form-control form-control-animated" id="usuario" placeholder="user"
+            required>
+        </div>
+        @if(formulario.get('nombreUsuario')?.touched && formulario.get('nombreUsuario')?.invalid){
+        <span class="text-danger animate__animated animate__fadeIn">El campo usuario está vacío</span>
+        }
+      </div>
+
+      <!-- Password -->
+      <div class="mb-4 position-relative form-group-hover">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <label for="password" class="form-label fw-medium d-flex align-items-center text-light">
+            <i class="bi bi-lock-fill me-2 icon-animate" style="color: #9b7e4b;"></i>Contraseña
+          </label>
+          <a href="/forgot-password" class="small text-decoration-none link-hover" style="color: #9b7e4b;">¿Olvidaste tu
+            contraseña?</a>
+        </div>
+        <div class="input-group input-group-with-hover">
+          <input formControlName="contrasena" type="password" class="form-control form-control-animated" id="password" placeholder="••••••••"
+            required>
+          <button class="btn icon-btn password-toggle" type="button" aria-label="Mostrar contraseña">
+            <i class="bi bi-eye icon-animate"></i>
+          </button>
+        </div>
+        @if(formulario.get('contrasena')?.touched && formulario.get('contrasena')?.invalid){
+        <span class="text-danger animate__animated animate__fadeIn">Campo contraseña está vacío</span>
+        }
+      </div>
+
+      <!-- Remember me -->
+      <div class="form-check mb-4 d-flex align-items-center checkbox-hover">
+        <input class="form-check-input me-2" type="checkbox" value="" id="remember">
+        <label class="form-check-label text-muted-custom" for="remember">
+          Recordar mis datos
+        </label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" [disabled]="formulario.invalid"
+        class="btn btn-custom w-100 d-flex align-items-center justify-content-center gap-2 btn-animated">
+        @if(isLoading){
+        <span class="spinner-border spinner-border-sm animate__animated animate__fadeIn" role="status" aria-hidden="true"></span>
+        }
+        @else{
+        <span class="btn-text">Iniciar Sesión</span>
+        }
+
+        <i class="bi bi-arrow-right ms-2 icon-right"></i>
+      </button>
+      
+      <!-- Separador con fútbol -->
+      <div class="separator-container my-4">
+        <div class="separator-line"></div>
+        <div class="separator-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9b7e4b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 2 L12 22 M2 12 L22 12 M4.93 4.93 L19.07 19.07 M4.93 19.07 L19.07 4.93" />
+          </svg>
+        </div>
+        <div class="separator-line"></div>
+      </div>
+      
+      <!-- Inicio de sesión con redes sociales -->
+      <div class="social-login mb-4">
+        <div class="row g-2">
+          <div class="col-6">
+            <button type="button" class="btn social-btn w-100">
+              <i class="bi bi-google me-2"></i> Google
+            </button>
+          </div>
+          <div class="col-6">
+            <button type="button" class="btn social-btn w-100">
+              <i class="bi bi-facebook me-2"></i> Facebook
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Link a inicio de sesión -->
+      <div class="text-center mt-4">
+        <p class="text-muted-custom">¿No tienes una cuenta? <a href="/registro" class="text-decoration-none link-hover"
+            style="color: #9b7e4b;">Registrarse</a></p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Diseño de fondo con animación -->
+<div class="background-design">
+  <div class="floating-shape shape1"></div>
+  <div class="floating-shape shape2"></div>
+  <div class="floating-shape shape3"></div>
+</div>

@@ -1,0 +1,232 @@
+.card-login {
+  background-color: #1e1a13;
+  border: 1px solid rgba(155, 126, 75, 0.5);
+  border-radius: 0.75rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.card-login:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.card-login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, rgba(140, 58, 43, 0), #8c3a2b, rgba(140, 58, 43, 0));
+  border-radius: 0.75rem 0.75rem 0 0;
+}
+
+.form-control {
+  background-color: #2c2417;
+  border: 1px solid rgba(155, 126, 75, 0.5);
+  color: #e8e0d0;
+  transition: all 0.3s ease;
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+}
+
+.form-control::placeholder {
+  color: rgba(232, 224, 208, 0.4);
+}
+
+.form-control:focus {
+  border-color: #9b7e4b;
+  box-shadow: 0 0 0 0.25rem rgba(155, 126, 75, 0.3);
+  background-color: #332a1c;
+}
+
+.input-group {
+  position: relative;
+}
+
+.form-check-input:checked {
+  background-color: #9b7e4b;
+  border-color: #9b7e4b;
+}
+
+.btn-custom {
+  background-color: #9b7e4b;
+  color: #e8e0d0;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-custom:hover {
+  background-color: #7d6539;
+  color: #e8e0d0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(155, 126, 75, 0.4);
+}
+
+.btn-custom:active {
+  transform: translateY(1px);
+}
+
+.text-muted-custom {
+  color: rgba(232, 224, 208, 0.7);
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #9b7e4b;
+  cursor: pointer;
+  z-index: 20;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  color: #e8e0d0;
+  opacity: 1;
+}
+
+/* Nuevos estilos */
+.form-label {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+small {
+  font-size: 80%;
+}
+
+.text-danger {
+  color: #ff6b6b !important;
+}
+
+.password-requirements {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.password-requirements div {
+  margin-bottom: 0.2rem;
+}
+
+/* Efectos del icono de fútbol */
+.football-icon {
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.football-icon svg {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+}
+
+.football-icon:hover svg {
+  transform: rotate(15deg);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.alert {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Estilos responsivos */
+@media (max-width: 576px) {
+  .card-login {
+    padding: 1.5rem;
+  }
+  
+  .form-label {
+    font-size: 0.9rem;
+  }
+}
+
+/* Efectos de entrada para los campos del formulario */
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mb-3, .mb-4 {
+  animation: slideUp 0.4s ease-out forwards;
+  animation-delay: calc(var(--animation-order, 0) * 0.1s);
+}
+
+/* Animación del botón */
+.btn-custom {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-custom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.btn-custom:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 0.5;
+    transform: scale(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(20, 20);
+  }
+}
+
+/* Efecto hover suave para los links */
+a {
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 8px rgba(155, 126, 75, 0.5);
+}

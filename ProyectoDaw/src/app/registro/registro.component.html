@@ -1,0 +1,119 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100" style="margin-top: 60px;">
+  <!-- Alerta de errores mejorada -->
+  @if(modal){
+  <div class="fixed-top"
+    style="top: 20px; left: 50%; transform: translateX(-50%); z-index: 1050; width: auto; max-width: 490px;">
+    <div class="alert fade show d-flex align-items-center px-3 py-2" role="alert"
+      style="background-color: rgba(163, 110, 77, 0.9); border: 1px solid #a36e4d; border-radius: 6px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); font-family: var(--font-primary); color: #f6ebd7; backdrop-filter: blur(5px);">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#f6ebd7"
+        class="me-2">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+      </svg>
+      <span class="text-white" style="font-family: var(--font-primary); letter-spacing: 0.01em;">{{error}}</span>
+      <button type="button" class="btn-close btn-close-white ms-auto" (click)="cerrarAlerta()"
+        style="opacity: 0.7;"></button>
+    </div>
+  </div>
+  }
+  
+  <div class="card-login w-100" style="max-width: 500px;">
+    <!-- Icono de fútbol SVG -->
+    <div class="text-center mb-3">
+      <div class="football-icon mb-3">
+        <svg width="60" height="60" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M64 12C35.4 12 12 35.4 12 64C12 92.6 35.4 116 64 116C92.6 116 116 92.6 116 64C116 35.4 92.6 12 64 12Z" fill="#332a1c" stroke="#9b7e4b" stroke-width="4"/>
+          <path d="M64 20C39.7 20 20 39.7 20 64C20 88.3 39.7 108 64 108C88.3 108 108 88.3 108 64C108 39.7 88.3 20 64 20Z" fill="#1e1a13" stroke="#9b7e4b" stroke-width="2"/>
+          <path d="M113 64L90 45L80 18L50 20L30 45L38 77L64 95L90 80L113 64Z" fill="none" stroke="#9b7e4b" stroke-width="2"/>
+          <path d="M64 20V40L50 20M64 20L80 18M64 40L90 45M64 40L38 77M90 45L113 64M90 45L90 80M113 64L90 80M90 80L64 95M64 95L38 77M38 77L30 45M30 45L50 20M50 20L80 18" stroke="#8c3a2b" stroke-width="2"/>
+        </svg>
+      </div>
+      <h2 class="fw-bold mb-2">Crear Cuenta</h2>
+      <p class="text-muted-custom">Únete para revivir los momentos más legendarios del fútbol</p>
+    </div>
+    
+    <form [formGroup]="formulario" (ngSubmit)="registrar()">
+      <!-- Usuario -->
+      <div class="mb-3">
+        <label for="usuario" class="form-label fw-medium d-flex align-items-center text-light">
+          <i class="bi bi-person-fill me-2" style="color: #9b7e4b;"></i>Usuario
+        </label>
+        <div class="input-group">
+          <input type="text" formControlName="nombreUsuario" class="form-control" id="usuario"
+            placeholder="Elige un nombre de usuario" required>
+          <span class="input-group-text bg-transparent border-0 position-absolute end-0" style="z-index: 10;">
+            <i class="bi bi-check-circle-fill" *ngIf="formulario.get('nombreUsuario')?.valid && formulario.get('nombreUsuario')?.touched" style="color: #6aaa64;"></i>
+          </span>
+        </div>
+        @if(formulario.get('nombreUsuario')?.invalid && formulario.get('nombreUsuario')?.touched){
+        <small class="text-danger mt-1 d-block">El nombre de usuario no debe tener símbolos especiales</small>
+        }
+      </div>
+
+      <!-- Contraseña -->
+      <div class="mb-3 position-relative">
+        <label for="password" class="form-label fw-medium d-flex align-items-center text-light">
+          <i class="bi bi-lock-fill me-2" style="color: #9b7e4b;"></i>Contraseña
+        </label>
+        <div class="input-group">
+          <input type="password" formControlName="contrasena" class="form-control" id="password"
+            placeholder="••••••••" required>
+          <button type="button" class="icon-btn">
+            <i class="bi bi-eye-fill"></i>
+          </button>
+        </div>
+        @if(formulario.get('contrasena')?.invalid && formulario.get('contrasena')?.touched){
+        <small class="text-danger mt-1 d-block">La contraseña debe tener una mayúscula, un número y un símbolo especial</small>
+        }
+        <!-- Indicador de requisitos de contraseña -->
+        <div class="password-requirements mt-2 small text-muted-custom">
+          <div><i class="bi bi-check-circle-fill me-1" style="color: #6aaa64;"></i> Mínimo 8 caracteres</div>
+          <div><i class="bi bi-check-circle-fill me-1" style="color: #6aaa64;"></i> Al menos una letra mayúscula</div>
+          <div><i class="bi bi-check-circle-fill me-1" style="color: #6aaa64;"></i> Al menos un número</div>
+          <div><i class="bi bi-check-circle-fill me-1" style="color: #6aaa64;"></i> Al menos un símbolo especial</div>
+        </div>
+      </div>
+
+      <!-- Repetir Contraseña -->
+      <div class="mb-4 position-relative">
+        <label for="confirmPassword" class="form-label fw-medium d-flex align-items-center text-light">
+          <i class="bi bi-shield-lock-fill me-2" style="color: #9b7e4b;"></i>Confirmar Contraseña
+        </label>
+        <div class="input-group">
+          <input type="password" formControlName="contrasena2" class="form-control" id="confirmPassword"
+            placeholder="••••••••" required>
+          <span class="input-group-text bg-transparent border-0 position-absolute end-0" style="z-index: 10;">
+            <i class="bi bi-check-circle-fill" *ngIf="formulario.get('contrasena')?.value === formulario.get('contrasena2')?.value && formulario.get('contrasena2')?.value" style="color: #6aaa64;"></i>
+            <i class="bi bi-x-circle-fill" *ngIf="formulario.get('contrasena')?.value !== formulario.get('contrasena2')?.value && formulario.get('contrasena2')?.value" style="color: #d9534f;"></i>
+          </span>
+        </div>
+      </div>
+
+      <!-- Términos y condiciones -->
+      <div class="form-check mb-4 d-flex align-items-start">
+        <input class="form-check-input me-2 mt-1" type="checkbox" id="terms" required>
+        <label class="form-check-label text-muted-custom small" for="terms">
+          Acepto los <a href="/terms" class="text-decoration-none" style="color: #9b7e4b;">términos y condiciones</a> y la <a href="/privacy" class="text-decoration-none" style="color: #9b7e4b;">política de privacidad</a> del sitio
+        </label>
+      </div>
+
+      <!-- Botón -->
+      <button type="submit" class="btn btn-custom w-100 d-flex align-items-center justify-content-center gap-2 py-2">
+        @if(isLoading){
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          <span class="ms-1">Procesando...</span>
+        }
+        @else{
+        Crear Cuenta
+        <i class="bi bi-arrow-right-short fs-5"></i>
+        }
+      </button>
+
+      <!-- Link a inicio de sesión -->
+      <div class="text-center mt-4">
+        <p class="text-muted-custom">¿Ya tienes una cuenta? <a href="/login" class="text-decoration-none"
+            style="color: #9b7e4b;">Iniciar Sesión</a></p>
+      </div>
+    </form>
+  </div>
+</div>

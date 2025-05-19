@@ -1,0 +1,18 @@
+/* Añade esto en tu archivo de estilos global */
+:root {
+  --font-primary: 'Inter', system-ui, sans-serif;
+  --font-accent: 'Space Grotesk', Impact, sans-serif;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-optical-sizing: auto; 
+
+  background-color: #20150c; 
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1600 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,800 C400,400 1200,400 1600,800' fill='none' stroke='%23a36e4d' stroke-width='2' stroke-opacity='0.05'/%3E%3Cpath d='M0,700 C400,300 1200,300 1600,700' fill='none' stroke='%23a36e4d' stroke-width='2' stroke-opacity='0.05'/%3E%3Cpath d='M0,600 C400,200 1200,200 1600,600' fill='none' stroke='%23a36e4d' stroke-width='2' stroke-opacity='0.05'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #f6ebd7;
+}
